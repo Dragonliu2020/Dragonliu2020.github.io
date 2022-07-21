@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>PA答疑之IDEX和IDEXW | Dragon&#39;s Development Blogs</title>
+  <meta name="description" content="1 问题IDEX其实就是相当于IDEXW(,,0)？可是最后一个参数不是操作数宽度吗？为什么会有0呢？ 12#define IDEXW(id, ex, w)   &amp;#123;concat(decode_, id), concat(exec_, ex), w&amp;#125;#define IDEX(id, ex)       IDEXW(id, ex, 0) 学妹的问题我不会🥦，于是请舍友帮忙解答，记">
+<meta name="keywords" content="PA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PA答疑之IDEX和IDEXW">
+<meta property="og:url" content="https://dragonliu2022.github.io/2022/04/23/PA答疑之IDEX和IDEXW/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="1 问题IDEX其实就是相当于IDEXW(,,0)？可是最后一个参数不是操作数宽度吗？为什么会有0呢？ 12#define IDEXW(id, ex, w)   &amp;#123;concat(decode_, id), concat(exec_, ex), w&amp;#125;#define IDEX(id, ex)       IDEXW(id, ex, 0) 学妹的问题我不会🥦，于是请舍友帮忙解答，记">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-07-21T17:03:22.061Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PA答疑之IDEX和IDEXW">
+<meta name="twitter:description" content="1 问题IDEX其实就是相当于IDEXW(,,0)？可是最后一个参数不是操作数宽度吗？为什么会有0呢？ 12#define IDEXW(id, ex, w)   &amp;#123;concat(decode_, id), concat(exec_, ex), w&amp;#125;#define IDEX(id, ex)       IDEXW(id, ex, 0) 学妹的问题我不会🥦，于是请舍友帮忙解答，记">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://dragonliu2022.github.io/2022/04/23/PA答疑之IDEX和IDEXW/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Dragon&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Development</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</br>dragonliu2018@gmail.com</br>电脑端观看效果更佳！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      <!-- 
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+ -->
+
+  <div class="category-block">
+    <h3 class="asidetitle">分类</h3>
+       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li></ul>
+  </div>
+  
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lab/">Lab</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PA/">PA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/">matplotlib</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码覆盖率/">代码覆盖率</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Git/" style="font-size: 13.67px;">Git</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Lab/" style="font-size: 13.33px;">Lab</a> <a href="/tags/PA/" style="font-size: 13.5px;">PA</a> <a href="/tags/Ubuntu/" style="font-size: 13.5px;">Ubuntu</a> <a href="/tags/gdb/" style="font-size: 13px;">gdb</a> <a href="/tags/matplotlib/" style="font-size: 13.33px;">matplotlib</a> <a href="/tags/selenium/" style="font-size: 13.17px;">selenium</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/代码覆盖率/" style="font-size: 13.17px;">代码覆盖率</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/深度学习/" style="font-size: 13.17px;">深度学习</a> <a href="/tags/若依/" style="font-size: 13.83px;">若依</a> <a href="/tags/重构/" style="font-size: 13.5px;">重构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/基础/">基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/20/Python读取表格日期类型/" class="title">Python读取表格日期类型</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-20T15:57:48.000Z" itemprop="datePublished">2022-07-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/基础/">基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/20/Python读取xlsx表格文件失败/" class="title">Python读取xlsx表格文件失败</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-20T15:46:50.000Z" itemprop="datePublished">2022-07-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/15/Linux无法识别移动硬盘/" class="title">Linux无法识别移动硬盘</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-15T15:34:58.000Z" itemprop="datePublished">2022-07-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/15/Linux创建桌面快捷方式/" class="title">Linux创建桌面快捷方式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-15T11:10:16.000Z" itemprop="datePublished">2022-07-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/05/Windows下配置多个Git-Github账号/" class="title">Windows下配置多个Git/Github账号</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-05T04:53:24.000Z" itemprop="datePublished">2022-07-05</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-问题"><span class="toc-number">1.</span> <span class="toc-text">1 问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-指令的执行周期"><span class="toc-number">2.</span> <span class="toc-text">2 指令的执行周期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-取指-instruction-fetch-IF"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 取指(instruction fetch, IF)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-译码-instruction-decode-ID"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 译码(instruction decode, ID)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-执行-execute-EX"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 执行(execute, EX)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-更新-eip"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 更新 eip</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-一条指令在NEMU中的执行过程"><span class="toc-number">3.</span> <span class="toc-text">3 一条指令在NEMU中的执行过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-IDEX与IDEXW"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 IDEX与IDEXW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-过程"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-main-c"><span class="toc-number">3.2.1.</span> <span class="toc-text">3.2.1 main.c</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-ui-mainloop"><span class="toc-number">3.2.2.</span> <span class="toc-text">3.2.2 ui_mainloop()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-cmd-c"><span class="toc-number">3.2.3.</span> <span class="toc-text">3.2.3 cmd_c()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-4-cpu-exec"><span class="toc-number">3.2.4.</span> <span class="toc-text">3.2.4 cpu_exec()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-5-exec-wrapper"><span class="toc-number">3.2.5.</span> <span class="toc-text">3.2.5 exec_wrapper()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-exec-real"><span class="toc-number">3.2.6.</span> <span class="toc-text">3.2.6 exec_real()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-6-1-set-width-（解决问题）"><span class="toc-number">3.2.6.1.</span> <span class="toc-text">3.2.6.1 set_width()（解决问题）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-6-2-idex"><span class="toc-number">3.2.6.2.</span> <span class="toc-text">3.2.6.2 idex()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-7-指令执行结束后"><span class="toc-number">3.2.7.</span> <span class="toc-text">3.2.7 指令执行结束后</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#X-参考"><span class="toc-number">4.</span> <span class="toc-text">X 参考</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PA答疑之IDEX和IDEXW" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PA答疑之IDEX和IDEXW
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/04/23/PA答疑之IDEX和IDEXW/" class="article-date">
+	  <time datetime="2022-04-23T06:43:37.000Z" itemprop="datePublished">2022-04-23</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/计组/">计组</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/PA/">PA</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/04/23/PA答疑之IDEX和IDEXW/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.9k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 7(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1 问题"></a>1 问题</h1><p><code>IDEX</code>其实就是相当于<code>IDEXW(,,0)</code>？可是最后一个参数不是操作数宽度吗？为什么会有0呢？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IDEXW(id, ex, w)   &#123;concat(decode_, id), concat(exec_, ex), w&#125;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IDEX(id, ex)       IDEXW(id, ex, 0)</span></span><br></pre></td></tr></table></figure>
+<p>学妹的问题我不会🥦，于是请舍友帮忙解答，记录下。</p>
+<h1 id="2-指令的执行周期"><a href="#2-指令的执行周期" class="headerlink" title="2 指令的执行周期"></a>2 指令的执行周期</h1><h2 id="2-1-取指-instruction-fetch-IF"><a href="#2-1-取指-instruction-fetch-IF" class="headerlink" title="2.1 取指(instruction fetch, IF)"></a>2.1 取指(instruction fetch, IF)</h2><p>取指令要做的事情自然就是将 <code>eip</code> 指向的指令从内存读入到CPU中。</p>
+<h2 id="2-2-译码-instruction-decode-ID"><a href="#2-2-译码-instruction-decode-ID" class="headerlink" title="2.2 译码(instruction decode, ID)"></a>2.2 译码(instruction decode, ID)</h2><p>CPU拿到一条指令之后，可以通过查表的方式得知这条指令的操作数和操作码。这个过程叫译码。</p>
+<p>计算机现在已经有存储器和寄存器了，它们都可以存放操作数，指令中也可以存放立即数，也可能还有二次译码的处理。</p>
+<h2 id="2-3-执行-execute-EX"><a href="#2-3-执行-execute-EX" class="headerlink" title="2.3 执行(execute, EX)"></a>2.3 执行(execute, EX)</h2><p>执行阶段就是真正完成指令的工作。现在 TRM 只有加法器这一个执行部件，必要的时候,，只需要往加法器输入两个源操作数, 就能得到执行的结果了。之后还要把结果写回到目的操作数中, 可能是寄存器, 也可能是内存。</p>
+<h2 id="2-4-更新-eip"><a href="#2-4-更新-eip" class="headerlink" title="2.4 更新 eip"></a>2.4 更新 <code>eip</code></h2><p>执行完一条指令之后，CPU就要执行下一条指令。在这之前，CPU 需要更新 <code>eip</code> 的值，让 <code>eip</code> 加上刚才执行完的指令的长度, 即可指向下一条指令的位置。</p>
+<h1 id="3-一条指令在NEMU中的执行过程"><a href="#3-一条指令在NEMU中的执行过程" class="headerlink" title="3 一条指令在NEMU中的执行过程"></a>3 一条指令在NEMU中的执行过程</h1><h2 id="3-1-IDEX与IDEXW"><a href="#3-1-IDEX与IDEXW" class="headerlink" title="3.1 IDEX与IDEXW"></a>3.1 IDEX与IDEXW</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">  DHelper decode;</span><br><span class="line">  EHelper execute;</span><br><span class="line">  <span class="keyword">int</span> <span class="built_in">width</span>;</span><br><span class="line">&#125; opcode_entry;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IDEXW(id, ex, w)   &#123;concat(decode_, id), concat(exec_, ex), w&#125;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IDEX(id, ex)       IDEXW(id, ex, 0)</span></span><br><span class="line"></span><br><span class="line">opcode_entry opcode_table [<span class="number">512</span>] = &#123;</span><br><span class="line">  <span class="comment">/* 0x00 */</span>	IDEXW(G2E, add, <span class="number">1</span>), IDEX(G2E, add), IDEXW(E2G, add, <span class="number">1</span>), IDEX(E2G, add),</span><br><span class="line">  <span class="comment">/* 0x04 */</span>	IDEXW(I2a, add, <span class="number">1</span>), IDEX(I2a, add), EMPTY, EMPTY,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>IDEXW</code>中的<code>w</code>也就是结构体<code>opcode_entry</code>中的<code>width</code>。</p>
+<h2 id="3-2-过程"><a href="#3-2-过程" class="headerlink" title="3.2 过程"></a>3.2 过程</h2><h3 id="3-2-1-main-c"><a href="#3-2-1-main-c" class="headerlink" title="3.2.1 main.c"></a>3.2.1 main.c</h3><p>nemu运行起来，主函数 <code>nemu/src/main.c</code>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">  <span class="comment">/* Initialize the monitor. */</span></span><br><span class="line">  <span class="keyword">int</span> is_batch_mode = init_monitor(argc, argv);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Receive commands from user. */</span></span><br><span class="line">  ui_mainloop(is_batch_mode);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-2-ui-mainloop"><a href="#3-2-2-ui-mainloop" class="headerlink" title="3.2.2 ui_mainloop()"></a>3.2.2 ui_mainloop()</h3><p>执行<code>ui_mainloop</code>函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ui_mainloop</span><span class="params">(<span class="keyword">int</span> is_batch_mode)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (is_batch_mode) &#123; <span class="comment">//批处理</span></span><br><span class="line">    cmd_c(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">	<span class="comment">// 处理传来的字符串</span></span><br><span class="line">  	...</span><br><span class="line">    <span class="comment">// 执行指令</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; NR_CMD; i ++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">strcmp</span>(cmd, cmd_table[i].name) == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cmd_table[i].handler(args) &lt; <span class="number">0</span>) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (i == NR_CMD) &#123; <span class="built_in">printf</span>(<span class="string">"Unknown command '%s'\n"</span>, cmd); &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-3-cmd-c"><a href="#3-2-3-cmd-c" class="headerlink" title="3.2.3 cmd_c()"></a>3.2.3 cmd_c()</h3><p>例如在nemu下执行<code>c</code>命令（继续运行被暂停的程序至结束）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">cmd_c</span><span class="params">(<span class="keyword">char</span> *args)</span> </span>&#123;</span><br><span class="line">  cpu_exec(<span class="number">-1</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-4-cpu-exec"><a href="#3-2-4-cpu-exec" class="headerlink" title="3.2.4 cpu_exec()"></a>3.2.4 cpu_exec()</h3><p>然后调用cpu_exec函数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Simulate how the CPU works. */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cpu_exec</span><span class="params">(<span class="keyword">uint64_t</span> n)</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">for</span> (; n &gt; <span class="number">0</span>; n --) &#123;</span><br><span class="line">    <span class="comment">/* Execute one instruction, including instruction fetch,</span></span><br><span class="line"><span class="comment">     * instruction decode, and the actual execution. */</span></span><br><span class="line">    exec_wrapper(print_flag);</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-5-exec-wrapper"><a href="#3-2-5-exec-wrapper" class="headerlink" title="3.2.5 exec_wrapper()"></a>3.2.5 exec_wrapper()</h3><blockquote>
+<p><strong><code>exec_wrapper()</code> 的执行过程</strong>：</p>
+<p>首先将当前的 <code>eip</code> 保存到全局译码信息 <code>decoding</code> 的成员 <code>seq_eip</code> 中,然后将其地址被作为参数送进<code>exec_real()</code> 函数中。<code>seq</code> 代表顺序的意思, 当代码从 <code>exec_real()</code> 返回时, <code>decoding.seq_eip</code> 将会指向下一条指令的地址.<code>exec_real()</code> 函数通过宏 <code>make_EHelper</code> 来定义:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="meta">#<span class="meta-keyword">define</span> make_EHelper(name) void concat(exec_, name) (vaddr_t *eip)</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>其含义是”定义一个执行阶段相关的helper函数”, 这些函数都带有一个参数<code>eip</code>。NEMU通过不同的helper函数来模拟不同的步骤.</p>
+</blockquote>
+<p>调用了exec_wrapper函数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exec_wrapper</span><span class="params">(<span class="keyword">bool</span> print_flag)</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  decoding.seq_eip = cpu.eip;</span><br><span class="line">  exec_real(&amp;decoding.seq_eip);</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>获取当前cpu的eip，然后执行exec_real函数。</p>
+<h3 id="3-2-6-exec-real"><a href="#3-2-6-exec-real" class="headerlink" title="3.2.6 exec_real()"></a>3.2.6 exec_real()</h3><blockquote>
+<p>在 <code>exec_real()</code> 中:</p>
+<ul>
+<li>首先通过 <code>instr_fetch()</code> 函数(在<code>nemu/include/cpu/exec.h</code>中定义)进行<strong>取指</strong>, 得到指令的第一个字节, 将其解释成 <code>opcode</code> 并记录在全局译码信息 <code>decoding</code> 中；</li>
+<li>根据 <code>opcode</code> 查阅译码查找表, 得到操作数的宽度信息, 并通过调用 <code>set_width()</code> 函数将其记录在全局译码信息 <code>decoding</code> 中；</li>
+<li>调用 <code>idex()</code> 对指令进行进一步的译码和执行。</li>
+</ul>
+</blockquote>
+<p>因为宏定义，exec_real也就是make_EHelper(real)函数：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> make_EHelper(name) void concat(exec_, name) (vaddr_t *eip)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">make_EHelper(real) &#123;</span><br><span class="line">  <span class="keyword">uint32_t</span> opcode = instr_fetch(eip, <span class="number">1</span>);</span><br><span class="line">  decoding.opcode = opcode;</span><br><span class="line">  set_width(opcode_table[opcode].<span class="built_in">width</span>);</span><br><span class="line">  idex(eip, &amp;opcode_table[opcode]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>decoding是保存当前单条命令译码结果的结构体。</p>
+<h4 id="3-2-6-1-set-width-（解决问题）"><a href="#3-2-6-1-set-width-（解决问题）" class="headerlink" title="3.2.6.1 set_width()（解决问题）"></a>3.2.6.1 set_width()（解决问题）</h4><p><strong>set_width函数使用到了width</strong>：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">set_width</span><span class="params">(<span class="keyword">int</span> <span class="built_in">width</span>)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">width</span> == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">width</span> = decoding.is_operand_size_16 ? <span class="number">2</span> : <span class="number">4</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  decoding.src.<span class="built_in">width</span> = decoding.dest.<span class="built_in">width</span> = decoding.src2.<span class="built_in">width</span> = <span class="built_in">width</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>set_width函数中表明：如果width设置0，就可能是2字节或4字节；如果不设置就是width的值；就是设置操作数（src+dest）的宽度。</strong></p>
+<h4 id="3-2-6-2-idex"><a href="#3-2-6-2-idex" class="headerlink" title="3.2.6.2 idex()"></a>3.2.6.2 idex()</h4><p>set_width函数之后执行idex函数，译码+执行：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Instruction Decode and EXecute */</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">idex</span><span class="params">(<span class="keyword">vaddr_t</span> *eip, opcode_entry *e)</span> </span>&#123;</span><br><span class="line">  <span class="comment">/* eip is pointing to the byte next to opcode */</span></span><br><span class="line">  <span class="keyword">if</span> (e-&gt;decode)</span><br><span class="line">    e-&gt;decode(eip);</span><br><span class="line">  e-&gt;execute(eip);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先会调用译码查找表中的相应的译码函数进行操作数的<strong>译码</strong>. 译码函数统一通过宏 <code>make_DHelper</code> 来定义(在 <code>nemu/src/cpu/decode/decode.c</code> 中)：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> make_DHelper(name) void concat(decode_, name) (vaddr_t *eip)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>它们的名字主要采用 <strong>i386 手册附录 A</strong>中的操作数表示记号, 例如 <code>I2r</code> 表示将立即数移入寄存器, 其中 <code>I</code> 表示立即数, <code>2</code> 表示英文 <code>to</code>, <code>r</code> 表示通用寄存器, 更多的记号请参考 <strong>i386 手册</strong>.译码函数会把指令中的操作数信息分别记录在全局译码信息 <code>decoding</code> 中。</p>
+<p>这些译码函数会进一步分解成各种不同操作数的译码的组合, 以实现操作数译码的解耦. 操作数译码函数统一通过宏 <code>make_DopHelper</code> 来定义 (在 <code>nemu/src/cpu/decode/decode.c</code> 中, <code>decode_op_rm()</code> 除外):</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="meta">#<span class="meta-keyword">define</span> make_DopHelper(name) void concat(decode_op_, name) (vaddr_t *eip, Operand *op, bool load_val)</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>它们的名字主要采用 <strong>i386 手册附录 A</strong> 中的操作数表示记号. 操作数译码函数会把操作数的信息记录在结构体 <code>op</code> 中, 如果操作数在指令中, 就会通过 <code>instr_fetch()</code> 将它们从 <code>eip</code> 所指向的内存位置取出. 为了使操作数译码函数更易于复用, 函数中的 <code>load_val</code> 参数会控制是否需要将该操作数读出到全局译码信息 <code>decoding</code> 供后续使用. 例如如果一个内存操作数是源操作数, 就需要将这个操作数从内存中读出来供后续执行阶段来使用; 如果它仅仅是一个目的操作数, 就不需要从内存读出它的值了, 因为执行这条指令并不需要这个值, 而是将新数据写入相应的内存位置.</p>
+</blockquote>
+<p><code>idex()</code> 函数中的译码过程结束之后, 会调用译码查找表中的相应的执行函数来进行真正的<strong>执行</strong>操作. 执行函数统一通过宏 <code>make_EHelper</code> 来定义, 它们的名字是指令操作本身. 执行函数通过 RTL 来描述指令真正的执行功能(RTL 将在下文介绍). 其中 <code>operand_write()</code> 函数(在 <code>nemu/src/cpu/decode/decode.c</code> 中定义) 会根据第一个参数中记录的类型的不同进行相应的写操作, 包括写寄存器和写内存.</p>
+<p>从 <code>idex()</code> 返回后, <code>exec_real()</code> 最后会通过 <code>update_eip()</code> 对 <code>eip</code> 进行更新。</p>
+<h3 id="3-2-7-指令执行结束后"><a href="#3-2-7-指令执行结束后" class="headerlink" title="3.2.7 指令执行结束后"></a>3.2.7 指令执行结束后</h3><p>执行完后，再次返回cpu_exec函数的for循环：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Simulate how the CPU works. */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cpu_exec</span><span class="params">(<span class="keyword">uint64_t</span> n)</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">  <span class="keyword">for</span> (; n &gt; <span class="number">0</span>; n --) &#123;</span><br><span class="line">    <span class="comment">/* Execute one instruction, including instruction fetch,</span></span><br><span class="line"><span class="comment">     * instruction decode, and the actual execution. */</span></span><br><span class="line">    exec_wrapper(print_flag);</span><br><span class="line">  &#125;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>循环上述流程，直到你指定的步数（c命令是-1，也就是最大值，也就是执行全部）。</p>
+<h1 id="X-参考"><a href="#X-参考" class="headerlink" title="X 参考"></a>X 参考</h1><ul>
+<li><a href="https://zhong-kangwei.gitee.io/ics-pa-gitbook-2022/pa2/2.1.html" target="_blank" rel="noopener">讲义</a></li>
+<li><a href="http://www.stardustdl.top/posts/learning/nju-icspa-analytics-nemu/" target="_blank" rel="noopener">NJU ICS Programming Assignment 代码分析 - NEMU</a></li>
+<li><a href="https://ilern.github.io/2021/01/12/NJU-ics-2020-%E6%A6%82%E8%A6%81/#%E8%AF%B7%E6%95%B4%E7%90%86%E4%B8%80%E6%9D%A1%E6%8C%87%E4%BB%A4%E5%9C%A8NEMU%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B" target="_blank" rel="noopener">NJU ics 2020 概要</a></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://dragonliu2022.github.io/2022/04/23/PA答疑之IDEX和IDEXW/" title="PA答疑之IDEX和IDEXW" target="_blank" rel="external">https://dragonliu2022.github.io/2022/04/23/PA答疑之IDEX和IDEXW/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Dragon&#39;s Blogs</span><small class="ml-1x">Development</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/04/23/PA答疑之代码框架/" title="PA答疑之代码框架"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/04/22/深度学习中的一些名词/" title="深度学习中的一些名词"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

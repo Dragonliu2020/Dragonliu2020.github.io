@@ -18,18 +18,18 @@
   
   
   <title>借助gitbook与Gitee Pages服务搭建静态网站 | Dragon&#39;s Development Blogs</title>
-  <meta name="description" content="1 引入 在做PA助教，需要将讲义重新部署下，静态网站。讲义仓库在Gitee，所以使用 gitbook + Gitee Pages 实现该需求。本文将以自己的Algorithm仓库进行演示：  2 实现 主要参考：使用 Gitbook 打造你的电子书  2.1 本地安装gitbook  2.1.1 安装gitbook 环境要求：  NodeJS（推荐使用v4.0.0及以上版本） Windows，">
+  <meta name="description" content="1 引入在做PA助教，需要将讲义重新部署下，静态网站。讲义仓库在Gitee，所以使用 gitbook + Gitee Pages 实现该需求。本文将以自己的Algorithm仓库进行演示： 2 实现主要参考：使用 Gitbook 打造你的电子书 2.1 本地安装gitbook2.1.1 安装gitbook环境要求：  NodeJS（推荐使用v4.0.0及以上版本） Windows，Linux，Un">
 <meta property="og:type" content="article">
 <meta property="og:title" content="借助gitbook与Gitee Pages服务搭建静态网站">
 <meta property="og:url" content="https://dragonliu2022.github.io/2022/03/25/借助gitbook与Gitee-Pages服务搭建静态网站/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 引入 在做PA助教，需要将讲义重新部署下，静态网站。讲义仓库在Gitee，所以使用 gitbook + Gitee Pages 实现该需求。本文将以自己的Algorithm仓库进行演示：  2 实现 主要参考：使用 Gitbook 打造你的电子书  2.1 本地安装gitbook  2.1.1 安装gitbook 环境要求：  NodeJS（推荐使用v4.0.0及以上版本） Windows，">
+<meta property="og:description" content="1 引入在做PA助教，需要将讲义重新部署下，静态网站。讲义仓库在Gitee，所以使用 gitbook + Gitee Pages 实现该需求。本文将以自己的Algorithm仓库进行演示： 2 实现主要参考：使用 Gitbook 打造你的电子书 2.1 本地安装gitbook2.1.1 安装gitbook环境要求：  NodeJS（推荐使用v4.0.0及以上版本） Windows，Linux，Un">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.loli.net/2022/03/25/w3mcMnqHIf4dyUG.png">
 <meta property="og:updated_time" content="2022-04-18T09:59:39.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="借助gitbook与Gitee Pages服务搭建静态网站">
-<meta name="twitter:description" content="1 引入 在做PA助教，需要将讲义重新部署下，静态网站。讲义仓库在Gitee，所以使用 gitbook + Gitee Pages 实现该需求。本文将以自己的Algorithm仓库进行演示：  2 实现 主要参考：使用 Gitbook 打造你的电子书  2.1 本地安装gitbook  2.1.1 安装gitbook 环境要求：  NodeJS（推荐使用v4.0.0及以上版本） Windows，">
+<meta name="twitter:description" content="1 引入在做PA助教，需要将讲义重新部署下，静态网站。讲义仓库在Gitee，所以使用 gitbook + Gitee Pages 实现该需求。本文将以自己的Algorithm仓库进行演示： 2 实现主要参考：使用 Gitbook 打造你的电子书 2.1 本地安装gitbook2.1.1 安装gitbook环境要求：  NodeJS（推荐使用v4.0.0及以上版本） Windows，Linux，Un">
 <meta name="twitter:image" content="https://s2.loli.net/2022/03/25/w3mcMnqHIf4dyUG.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://dragonliu2022.github.io/2022/03/25/借助gitbook与Gitee-Pages服务搭建静态网站/index.html">
@@ -190,21 +190,26 @@
 </div>
 
     
-      
+      <!-- 
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">41</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分类/">未分类</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">20</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
+ -->
 
-
+  <div class="category-block">
+    <h3 class="asidetitle">分类</h3>
+       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li></ul>
+  </div>
+  
     
       
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/">Element</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/">Spring Boot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/neo4j/">neo4j</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lab/">Lab</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PA/">PA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/">matplotlib</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码覆盖率/">代码覆盖率</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -214,7 +219,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/Element/" style="font-size: 13.8px;">Element</a> <a href="/tags/Git/" style="font-size: 13.6px;">Git</a> <a href="/tags/MySQL/" style="font-size: 13.8px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/Spring-Boot/" style="font-size: 13.2px;">Spring Boot</a> <a href="/tags/Vue/" style="font-size: 13px;">Vue</a> <a href="/tags/neo4j/" style="font-size: 13px;">neo4j</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/重构/" style="font-size: 13.4px;">重构</a> <a href="/tags/面试/" style="font-size: 13.6px;">面试</a>
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Git/" style="font-size: 13.67px;">Git</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Lab/" style="font-size: 13.33px;">Lab</a> <a href="/tags/PA/" style="font-size: 13.5px;">PA</a> <a href="/tags/Ubuntu/" style="font-size: 13.5px;">Ubuntu</a> <a href="/tags/gdb/" style="font-size: 13px;">gdb</a> <a href="/tags/matplotlib/" style="font-size: 13.33px;">matplotlib</a> <a href="/tags/selenium/" style="font-size: 13.17px;">selenium</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/代码覆盖率/" style="font-size: 13.17px;">代码覆盖率</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/深度学习/" style="font-size: 13.17px;">深度学习</a> <a href="/tags/若依/" style="font-size: 13.83px;">若依</a> <a href="/tags/重构/" style="font-size: 13.5px;">重构</a>
     </div>
   </div>
 
@@ -223,7 +228,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -239,13 +244,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                
+                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/基础/">基础</a>
               </p>
               <p class="item-title">
-                <a href="/2022/05/29/Java中调用Python程序/" class="title">Java中调用Python程序</a>
+                <a href="/2022/07/20/Python读取表格日期类型/" class="title">Python读取表格日期类型</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-05-29T14:28:07.000Z" itemprop="datePublished">2022-05-29</time>
+                <time datetime="2022-07-20T15:57:48.000Z" itemprop="datePublished">2022-07-20</time>
               </p>
             </div>
           </li>
@@ -254,13 +259,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/Python/">Python</a>
+                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/基础/">基础</a>
               </p>
               <p class="item-title">
-                <a href="/2022/05/12/Python-列表-生成列表/" class="title">Python-列表-生成列表</a>
+                <a href="/2022/07/20/Python读取xlsx表格文件失败/" class="title">Python读取xlsx表格文件失败</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-05-12T14:39:10.000Z" itemprop="datePublished">2022-05-12</time>
+                <time datetime="2022-07-20T15:46:50.000Z" itemprop="datePublished">2022-07-20</time>
               </p>
             </div>
           </li>
@@ -269,13 +274,28 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
               </p>
               <p class="item-title">
-                <a href="/2022/05/12/matplotlib画图出现中文乱码/" class="title">matplotlib画图出现中文乱码</a>
+                <a href="/2022/07/15/Linux无法识别移动硬盘/" class="title">Linux无法识别移动硬盘</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-05-12T14:32:27.000Z" itemprop="datePublished">2022-05-12</time>
+                <time datetime="2022-07-15T15:34:58.000Z" itemprop="datePublished">2022-07-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/15/Linux创建桌面快捷方式/" class="title">Linux创建桌面快捷方式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-15T11:10:16.000Z" itemprop="datePublished">2022-07-15</time>
               </p>
             </div>
           </li>
@@ -287,25 +307,10 @@
                 <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
               </p>
               <p class="item-title">
-                <a href="/2022/05/11/git报错之error-object-file-git-objects-31-65329bb680e30595f242b7c4d8406ca63eeab0-is-empty/" class="title">git报错之error: object file .git/objects/31/65329bb680e30595f242b7c4d8406ca63eeab0 is empty</a>
+                <a href="/2022/07/05/Windows下配置多个Git-Github账号/" class="title">Windows下配置多个Git/Github账号</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-05-10T16:34:25.000Z" itemprop="datePublished">2022-05-11</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
-              </p>
-              <p class="item-title">
-                <a href="/2022/05/10/git报错之error-refs-heads-pa2-does-not-point-to-a-valid-object/" class="title">git报错之error: refs/heads/pa2 does not point to a valid object</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2022-05-10T15:31:38.000Z" itemprop="datePublished">2022-05-10</time>
+                <time datetime="2022-07-05T04:53:24.000Z" itemprop="datePublished">2022-07-05</time>
               </p>
             </div>
           </li>
@@ -325,7 +330,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引入"><span class="toc-number">1.</span> <span class="toc-text"> 1 引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-实现"><span class="toc-number">2.</span> <span class="toc-text"> 2 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-本地安装gitbook"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 本地安装gitbook</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#211-安装gitbook"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 2.1.1 安装gitbook</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#212-gitbook-项目结构"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 2.1.2 GitBook 项目结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#213-创建bookjson与summarymd"><span class="toc-number">2.1.3.</span> <span class="toc-text"> 2.1.3 创建book.json与SUMMARY.md</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#214-目录顺序"><span class="toc-number">2.1.4.</span> <span class="toc-text"> 2.1.4 目录顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#215-数学公式"><span class="toc-number">2.1.5.</span> <span class="toc-text"> 2.1.5 数学公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#216-构建与启动服务"><span class="toc-number">2.1.6.</span> <span class="toc-text"> 2.1.6 构建与启动服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-实现在线访问"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.2 实现在线访问</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引入"><span class="toc-number">1.</span> <span class="toc-text">1 引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-实现"><span class="toc-number">2.</span> <span class="toc-text">2 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-本地安装gitbook"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 本地安装gitbook</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-安装gitbook"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1 安装gitbook</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-GitBook-项目结构"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2 GitBook 项目结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-创建book-json与SUMMARY-md"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.1.3 创建book.json与SUMMARY.md</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-目录顺序"><span class="toc-number">2.1.4.</span> <span class="toc-text">2.1.4 目录顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-数学公式"><span class="toc-number">2.1.5.</span> <span class="toc-text">2.1.5 数学公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-6-构建与启动服务"><span class="toc-number">2.1.6.</span> <span class="toc-text">2.1.6 构建与启动服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-实现在线访问"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 实现在线访问</span></a></li></ol></li></ol>
     </nav>
   </div>
 </aside>
@@ -371,7 +376,7 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/03/25/借助gitbook与Gitee-Pages服务搭建静态网站/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 602(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 601(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
@@ -381,13 +386,9 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-引入"><a class="markdownIt-Anchor" href="#1-引入"></a> 1 引入</h1>
-<p>在做PA助教，需要将讲义重新部署下，静态网站。讲义仓库在Gitee，所以使用 <code>gitbook + Gitee Pages</code> 实现该需求。本文将以自己的<code>Algorithm</code>仓库进行演示：</p>
-<h1 id="2-实现"><a class="markdownIt-Anchor" href="#2-实现"></a> 2 实现</h1>
-<p>主要参考：<a href="https://zhuanlan.zhihu.com/p/34946169" target="_blank" rel="noopener">使用 Gitbook 打造你的电子书</a></p>
-<h2 id="21-本地安装gitbook"><a class="markdownIt-Anchor" href="#21-本地安装gitbook"></a> 2.1 本地安装gitbook</h2>
-<h3 id="211-安装gitbook"><a class="markdownIt-Anchor" href="#211-安装gitbook"></a> 2.1.1 安装gitbook</h3>
-<p>环境要求：</p>
+        <h1 id="1-引入"><a href="#1-引入" class="headerlink" title="1 引入"></a>1 引入</h1><p>在做PA助教，需要将讲义重新部署下，静态网站。讲义仓库在Gitee，所以使用 <code>gitbook + Gitee Pages</code> 实现该需求。本文将以自己的<code>Algorithm</code>仓库进行演示：</p>
+<h1 id="2-实现"><a href="#2-实现" class="headerlink" title="2 实现"></a>2 实现</h1><p>主要参考：<a href="https://zhuanlan.zhihu.com/p/34946169" target="_blank" rel="noopener">使用 Gitbook 打造你的电子书</a></p>
+<h2 id="2-1-本地安装gitbook"><a href="#2-1-本地安装gitbook" class="headerlink" title="2.1 本地安装gitbook"></a>2.1 本地安装gitbook</h2><h3 id="2-1-1-安装gitbook"><a href="#2-1-1-安装gitbook" class="headerlink" title="2.1.1 安装gitbook"></a>2.1.1 安装gitbook</h3><p>环境要求：</p>
 <ul>
 <li>NodeJS（推荐使用v4.0.0及以上版本）</li>
 <li>Windows，Linux，Unix 或 Mac OS X</li>
@@ -396,11 +397,11 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gitbook-cli -g</span><br></pre></td></tr></table></figure>
 <p>执行下面的命令，查看 GitBook 版本，以验证安装成功：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook -V</span><br></pre></td></tr></table></figure>
-<h3 id="212-gitbook-项目结构"><a class="markdownIt-Anchor" href="#212-gitbook-项目结构"></a> 2.1.2 GitBook 项目结构</h3>
-<p>GitBook使用简单的目录结构。在 SUMMARY （即 <a href="http://SUMMARY.md" target="_blank" rel="noopener">SUMMARY.md</a> 文件）中列出的所有 Markdown / Asciidoc 文件将被转换为 HTML。</p>
+<h3 id="2-1-2-GitBook-项目结构"><a href="#2-1-2-GitBook-项目结构" class="headerlink" title="2.1.2 GitBook 项目结构"></a>2.1.2 GitBook 项目结构</h3><p>GitBook使用简单的目录结构。在 SUMMARY （即 SUMMARY.md 文件）中列出的所有 Markdown / Asciidoc 文件将被转换为 HTML。</p>
 <p>一个基本的 GitBook 电子书结构通常如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── book.json</span><br><span class="line">├── README.md</span><br><span class="line">├── SUMMARY.md</span><br><span class="line">├── chapter-1/</span><br><span class="line">|   ├── README.md</span><br><span class="line">|   └── something.md</span><br><span class="line">└── chapter-2/</span><br><span class="line">    ├── README.md</span><br><span class="line">    └── something.md</span><br></pre></td></tr></table></figure>
 <p>GitBook 特殊文件的功能：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -414,21 +415,21 @@
 <td style="text-align:center">配置数据、包括插件配置(可选)</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://README.md" target="_blank" rel="noopener">README.md</a></td>
+<td style="text-align:center">README.md</td>
 <td style="text-align:center">电子书的前言或每个文件夹的简介(必选)</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://SUMMARY.md" target="_blank" rel="noopener">SUMMARY.md</a></td>
+<td style="text-align:center">SUMMARY.md</td>
 <td style="text-align:center">电子书目录(可选)</td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://GLOSSARY.md" target="_blank" rel="noopener">GLOSSARY.md</a></td>
+<td style="text-align:center">GLOSSARY.md</td>
 <td style="text-align:center">词汇/注释术语列表(可选)</td>
 </tr>
 </tbody>
 </table>
-<h3 id="213-创建bookjson与summarymd"><a class="markdownIt-Anchor" href="#213-创建bookjson与summarymd"></a> 2.1.3 <a href="http://xn--book-pj9fv59d.xn--jsonSUMMARY-hr8q.md" target="_blank" rel="noopener">创建book.json与SUMMARY.md</a></h3>
-<ul>
+</div>
+<h3 id="2-1-3-创建book-json与SUMMARY-md"><a href="#2-1-3-创建book-json与SUMMARY-md" class="headerlink" title="2.1.3 创建book.json与SUMMARY.md"></a>2.1.3 创建book.json与SUMMARY.md</h3><ul>
 <li>参考：<a href="https://www.jianshu.com/p/2160f1ba68a0" target="_blank" rel="noopener">Gitbook根据目录生成Summary.md</a></li>
 </ul>
 <p><code>book.json</code> 文件需要自己创建，<code>SUMMARY.md</code>文件可以使用插件(gitbook-plugin-summary)自动生成。</p>
@@ -436,27 +437,23 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i gitbook-plugin-summary --save</span><br></pre></td></tr></table></figure>
 <p>在<code>Algorithm</code>项目根目录创建 <code>book.json</code> 文件，并输入：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"plugins"</span>: [ </span><br><span class="line">		<span class="string">"summary"</span></span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="214-目录顺序"><a class="markdownIt-Anchor" href="#214-目录顺序"></a> 2.1.4 目录顺序</h3>
-<p>关于数字序号的顺序：<code>Ch10</code>、<code>Ch11</code>、<code>Ch1</code>、<code>Ch2</code>、<code>Ch3</code>、<code>Ch4</code>…</p>
+<h3 id="2-1-4-目录顺序"><a href="#2-1-4-目录顺序" class="headerlink" title="2.1.4 目录顺序"></a>2.1.4 目录顺序</h3><p>关于数字序号的顺序：<code>Ch10</code>、<code>Ch11</code>、<code>Ch1</code>、<code>Ch2</code>、<code>Ch3</code>、<code>Ch4</code>…</p>
 <p>所以需要修改序号：<code>Ch1</code>、<code>Ch2</code>、<code>Ch3</code>、<code>Ch4</code>、…、<code>Ch10</code>、<code>Ch11</code></p>
-<h3 id="215-数学公式"><a class="markdownIt-Anchor" href="#215-数学公式"></a> 2.1.5 数学公式</h3>
-<p>使用<code>mathjax</code>，但是不支持行内公式，效果不好，后续再看怎么解决这一块。</p>
+<h3 id="2-1-5-数学公式"><a href="#2-1-5-数学公式" class="headerlink" title="2.1.5 数学公式"></a>2.1.5 数学公式</h3><p>使用<code>mathjax</code>，但是不支持行内公式，效果不好，后续再看怎么解决这一块。</p>
 <p>参考：</p>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/132638228" target="_blank" rel="noopener">gitbook使用mathjax</a></li>
 <li><a href="https://blog.csdn.net/qq_42898299/article/details/106779945" target="_blank" rel="noopener">gitbook采坑笔记（一：Mathjax）</a></li>
 </ul>
-<h3 id="216-构建与启动服务"><a class="markdownIt-Anchor" href="#216-构建与启动服务"></a> 2.1.6 构建与启动服务</h3>
-<p>使用下面的命令，会在项目的目录下生成一个 <code>_book</code> 目录，里面的内容为静态站点的资源文件：</p>
+<h3 id="2-1-6-构建与启动服务"><a href="#2-1-6-构建与启动服务" class="headerlink" title="2.1.6 构建与启动服务"></a>2.1.6 构建与启动服务</h3><p>使用下面的命令，会在项目的目录下生成一个 <code>_book</code> 目录，里面的内容为静态站点的资源文件：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook build</span><br></pre></td></tr></table></figure>
 <p>使用下列命令会运行一个 web 服务, 通过 <code>http://localhost:4000/</code> 可以预览书籍：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook serve</span><br></pre></td></tr></table></figure>
 <p>至此，<code>Algorithm</code>仓库对应的静态网站已经部署成功。</p>
-<h2 id="22-实现在线访问"><a class="markdownIt-Anchor" href="#22-实现在线访问"></a> 2.2 实现在线访问</h2>
-<p>在Gitee上打开<code>Algorithm</code>仓库，点击<code>服务</code>标签，选择<code>Gitee Pages</code>图标。</p>
+<h2 id="2-2-实现在线访问"><a href="#2-2-实现在线访问" class="headerlink" title="2.2 实现在线访问"></a>2.2 实现在线访问</h2><p>在Gitee上打开<code>Algorithm</code>仓库，点击<code>服务</code>标签，选择<code>Gitee Pages</code>图标。</p>
 <p><strong>注意</strong>：Gitee Pages服务需要实名认证，审核需要数个工作日。</p>
-<img src="https://s2.loli.net/2022/03/25/w3mcMnqHIf4dyUG.png" width="800" height="400" alt="图片名称" align="center" id="116">
-<p><strong>部署目录需要是<code>_book</code></strong></p>
+<p><img src="https://s2.loli.net/2022/03/25/w3mcMnqHIf4dyUG.png" width="800" height="400" alt="图片名称" align="center" id="116"></p>
+<p> <strong>部署目录需要是<code>_book</code></strong></p>
 <p>现在访问 <a href="http://dragon-liu.gitee.io/algorithm" target="_blank" rel="noopener">http://dragon-liu.gitee.io/algorithm</a> 即可。</p>
 
       
