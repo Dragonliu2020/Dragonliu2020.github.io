@@ -18,13 +18,13 @@
   
   
   <title>MR(merge request) vs PR(pull request) | Dragon&#39;s Development Blogs</title>
-  <meta name="description" content="转载：啥是 PR？啥又是MR？  1 引入在团队中我承担了Committer 的责任，也就是帮同事们检视代码（Code Review）和合入代码，经常听到有同事在群里喊：“大佬，帮我合个 PR”，“大佬，我刚提交了一个 MR，帮忙合一下，急着出补丁”。我有点懵了，PR 和 MR 到底哪个才是正确的，这两个到底有什么区别，我决定先搞清楚这两个概念再合入他们的代码。[手动滑稽] 2 什么是Pull">
+  <meta name="description" content="转载：啥是 PR？啥又是MR？   1 引入 在团队中我承担了Committer 的责任，也就是帮同事们检视代码（Code Review）和合入代码，经常听到有同事在群里喊：“大佬，帮我合个 PR”，“大佬，我刚提交了一个 MR，帮忙合一下，急着出补丁”。我有点懵了，PR 和 MR 到底哪个才是正确的，这两个到底有什么区别，我决定先搞清楚这两个概念再合入他们的代码。[手动滑稽]  2 什么是Pu">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MR(merge request) vs PR(pull request)">
 <meta property="og:url" content="https://dragonliu2022.github.io/2022/04/15/MR-merge-request-vs-PR-pull-request/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="转载：啥是 PR？啥又是MR？  1 引入在团队中我承担了Committer 的责任，也就是帮同事们检视代码（Code Review）和合入代码，经常听到有同事在群里喊：“大佬，帮我合个 PR”，“大佬，我刚提交了一个 MR，帮忙合一下，急着出补丁”。我有点懵了，PR 和 MR 到底哪个才是正确的，这两个到底有什么区别，我决定先搞清楚这两个概念再合入他们的代码。[手动滑稽] 2 什么是Pull">
+<meta property="og:description" content="转载：啥是 PR？啥又是MR？   1 引入 在团队中我承担了Committer 的责任，也就是帮同事们检视代码（Code Review）和合入代码，经常听到有同事在群里喊：“大佬，帮我合个 PR”，“大佬，我刚提交了一个 MR，帮忙合一下，急着出补丁”。我有点懵了，PR 和 MR 到底哪个才是正确的，这两个到底有什么区别，我决定先搞清楚这两个概念再合入他们的代码。[手动滑稽]  2 什么是Pu">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.loli.net/2022/04/15/CLTr3VjuGOwJUBg.png">
 <meta property="og:image" content="https://s2.loli.net/2022/04/15/q4NIh1H7ZVA9CR2.png">
@@ -33,7 +33,7 @@
 <meta property="og:updated_time" content="2022-04-18T11:31:16.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MR(merge request) vs PR(pull request)">
-<meta name="twitter:description" content="转载：啥是 PR？啥又是MR？  1 引入在团队中我承担了Committer 的责任，也就是帮同事们检视代码（Code Review）和合入代码，经常听到有同事在群里喊：“大佬，帮我合个 PR”，“大佬，我刚提交了一个 MR，帮忙合一下，急着出补丁”。我有点懵了，PR 和 MR 到底哪个才是正确的，这两个到底有什么区别，我决定先搞清楚这两个概念再合入他们的代码。[手动滑稽] 2 什么是Pull">
+<meta name="twitter:description" content="转载：啥是 PR？啥又是MR？   1 引入 在团队中我承担了Committer 的责任，也就是帮同事们检视代码（Code Review）和合入代码，经常听到有同事在群里喊：“大佬，帮我合个 PR”，“大佬，我刚提交了一个 MR，帮忙合一下，急着出补丁”。我有点懵了，PR 和 MR 到底哪个才是正确的，这两个到底有什么区别，我决定先搞清楚这两个概念再合入他们的代码。[手动滑稽]  2 什么是Pu">
 <meta name="twitter:image" content="https://s2.loli.net/2022/04/15/CLTr3VjuGOwJUBg.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://dragonliu2022.github.io/2022/04/15/MR-merge-request-vs-PR-pull-request/index.html">
@@ -198,14 +198,14 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
  -->
 
   <div class="category-block">
     <h3 class="asidetitle">分类</h3>
-       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li></ul>
+       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
   </div>
   
     
@@ -213,7 +213,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lab/">Lab</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PA/">PA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/">matplotlib</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码覆盖率/">代码覆盖率</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lab/">Lab</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PA/">PA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/">matplotlib</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码覆盖率/">代码覆盖率</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -223,7 +223,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Git/" style="font-size: 13.67px;">Git</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Lab/" style="font-size: 13.33px;">Lab</a> <a href="/tags/PA/" style="font-size: 13.5px;">PA</a> <a href="/tags/Ubuntu/" style="font-size: 13.5px;">Ubuntu</a> <a href="/tags/gdb/" style="font-size: 13px;">gdb</a> <a href="/tags/matplotlib/" style="font-size: 13.33px;">matplotlib</a> <a href="/tags/selenium/" style="font-size: 13.17px;">selenium</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/代码覆盖率/" style="font-size: 13.17px;">代码覆盖率</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/深度学习/" style="font-size: 13.17px;">深度学习</a> <a href="/tags/若依/" style="font-size: 13.83px;">若依</a> <a href="/tags/重构/" style="font-size: 13.5px;">重构</a>
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Git/" style="font-size: 13.67px;">Git</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Lab/" style="font-size: 13.33px;">Lab</a> <a href="/tags/PA/" style="font-size: 13.5px;">PA</a> <a href="/tags/Ubuntu/" style="font-size: 13.5px;">Ubuntu</a> <a href="/tags/gdb/" style="font-size: 13px;">gdb</a> <a href="/tags/matplotlib/" style="font-size: 13.33px;">matplotlib</a> <a href="/tags/selenium/" style="font-size: 13.33px;">selenium</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/代码覆盖率/" style="font-size: 13.17px;">代码覆盖率</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/深度学习/" style="font-size: 13.17px;">深度学习</a> <a href="/tags/若依/" style="font-size: 13.83px;">若依</a> <a href="/tags/重构/" style="font-size: 13.5px;">重构</a>
     </div>
   </div>
 
@@ -232,7 +232,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -248,13 +248,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/基础/">基础</a>
+                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/爬虫/">爬虫</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/20/Python读取表格日期类型/" class="title">Python读取表格日期类型</a>
+                <a href="/2022/09/07/北航健康上报打卡/" class="title">北航健康上报打卡</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-20T15:57:48.000Z" itemprop="datePublished">2022-07-20</time>
+                <time datetime="2022-09-07T03:25:13.000Z" itemprop="datePublished">2022-09-07</time>
               </p>
             </div>
           </li>
@@ -263,13 +263,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/基础/">基础</a>
+                <a class="category-link" href="/categories/软件开发/">软件开发</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/20/Python读取xlsx表格文件失败/" class="title">Python读取xlsx表格文件失败</a>
+                <a href="/2022/07/26/《人月神话》笔记/" class="title">《人月神话》笔记</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-20T15:46:50.000Z" itemprop="datePublished">2022-07-20</time>
+                <time datetime="2022-07-26T14:14:23.000Z" itemprop="datePublished">2022-07-26</time>
               </p>
             </div>
           </li>
@@ -278,13 +278,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/15/Linux无法识别移动硬盘/" class="title">Linux无法识别移动硬盘</a>
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-15T15:34:58.000Z" itemprop="datePublished">2022-07-15</time>
+                <time datetime="2022-07-25T15:53:32.000Z" itemprop="datePublished">2022-07-25</time>
               </p>
             </div>
           </li>
@@ -293,13 +293,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/15/Linux创建桌面快捷方式/" class="title">Linux创建桌面快捷方式</a>
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-15T11:10:16.000Z" itemprop="datePublished">2022-07-15</time>
+                <time datetime="2022-07-25T07:56:57.000Z" itemprop="datePublished">2022-07-25</time>
               </p>
             </div>
           </li>
@@ -308,13 +308,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/基础/">基础</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/05/Windows下配置多个Git-Github账号/" class="title">Windows下配置多个Git/Github账号</a>
+                <a href="/2022/07/25/MBR分区表为什么最大只能识别2TB硬盘容量/" class="title">MBR分区表为什么最大只能识别2TB硬盘容量</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-05T04:53:24.000Z" itemprop="datePublished">2022-07-05</time>
+                <time datetime="2022-07-25T02:50:37.000Z" itemprop="datePublished">2022-07-25</time>
               </p>
             </div>
           </li>
@@ -334,7 +334,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引入"><span class="toc-number">1.</span> <span class="toc-text">1 引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-什么是Pull-Request？"><span class="toc-number">2.</span> <span class="toc-text">2 什么是Pull Request？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-什么是-Merge-Request？"><span class="toc-number">3.</span> <span class="toc-text">3 什么是 Merge Request？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Pull-Request-VS-Merge-Request"><span class="toc-number">4.</span> <span class="toc-text">4 Pull Request VS Merge Request</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-疯狂吐槽"><span class="toc-number">5.</span> <span class="toc-text">5 疯狂吐槽</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-总结"><span class="toc-number">6.</span> <span class="toc-text">6 总结</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引入"><span class="toc-number">1.</span> <span class="toc-text"> 1 引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-什么是pull-request"><span class="toc-number">2.</span> <span class="toc-text"> 2 什么是Pull Request？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-什么是-merge-request"><span class="toc-number">3.</span> <span class="toc-text"> 3 什么是 Merge Request？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-pull-request-vs-merge-request"><span class="toc-number">4.</span> <span class="toc-text"> 4 Pull Request VS Merge Request</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-疯狂吐槽"><span class="toc-number">5.</span> <span class="toc-text"> 5 疯狂吐槽</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-总结"><span class="toc-number">6.</span> <span class="toc-text"> 6 总结</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -398,20 +398,24 @@
         <blockquote>
 <p><strong>转载</strong>：<a href="https://mp.weixin.qq.com/s?__biz=MzkwNzI0MzQ2NQ==&amp;mid=2247489125&amp;idx=2&amp;sn=735299f1744b1074e54cbeeaeadc1e9c&amp;source=41#wechat_redirect" target="_blank" rel="noopener">啥是 PR？啥又是MR？</a></p>
 </blockquote>
-<h1 id="1-引入"><a href="#1-引入" class="headerlink" title="1 引入"></a>1 引入</h1><p>在团队中我承担了<code>Committer</code> 的责任，也就是帮同事们检视代码（<code>Code Review</code>）和合入代码，经常听到有同事在群里喊：“大佬，帮我合个 PR”，“大佬，我刚提交了一个 MR，帮忙合一下，急着出补丁”。我有点懵了，<code>PR</code> 和 <code>MR</code> 到底哪个才是正确的，这两个到底有什么区别，我决定先搞清楚这两个概念再合入他们的代码。[手动滑稽]</p>
-<h1 id="2-什么是Pull-Request？"><a href="#2-什么是Pull-Request？" class="headerlink" title="2 什么是Pull Request？"></a>2 什么是Pull Request？</h1><p><code>PR</code> 的全称是<code>Pull Request</code>，经常用 <code>Github</code> 的同学对这个肯定很熟悉了。Github 聚集了4000万开发者，过亿的开源项目，如果想给别人的开源仓库贡献代码，通常是先 <code>fork</code> 别人的项目，然后本地修改完成提交到自己的个人 fork 仓库，最后提交 PR 等待别人合入你的代码。</p>
+<h1 id="1-引入"><a class="markdownIt-Anchor" href="#1-引入"></a> 1 引入</h1>
+<p>在团队中我承担了<code>Committer</code> 的责任，也就是帮同事们检视代码（<code>Code Review</code>）和合入代码，经常听到有同事在群里喊：“大佬，帮我合个 PR”，“大佬，我刚提交了一个 MR，帮忙合一下，急着出补丁”。我有点懵了，<code>PR</code> 和 <code>MR</code> 到底哪个才是正确的，这两个到底有什么区别，我决定先搞清楚这两个概念再合入他们的代码。[手动滑稽]</p>
+<h1 id="2-什么是pull-request"><a class="markdownIt-Anchor" href="#2-什么是pull-request"></a> 2 什么是Pull Request？</h1>
+<p><code>PR</code> 的全称是<code>Pull Request</code>，经常用 <code>Github</code> 的同学对这个肯定很熟悉了。Github 聚集了4000万开发者，过亿的开源项目，如果想给别人的开源仓库贡献代码，通常是先 <code>fork</code> 别人的项目，然后本地修改完成提交到自己的个人 fork 仓库，最后提交 PR 等待别人合入你的代码。</p>
 <p>Github 的工作流（fork 工作流）：</p>
-<p><img src="https://s2.loli.net/2022/04/15/CLTr3VjuGOwJUBg.png" width="400" height="400" alt="fork 工作流" align="center" id="150"></p>
+<img src="https://s2.loli.net/2022/04/15/CLTr3VjuGOwJUBg.png" width="400" height="400" alt="fork 工作流" align="center" id="150">
 <p>我们重点看一下第6步，小明写完代码了想合入到原作者的仓库，新建了一个“<code>pull request</code>”，拉请求？这明明是推啊，小明将自己的修改推到原作者的仓，感觉叫“<code>push request</code>”比较合适吧。</p>
 <p>既然 Github 坚持叫“<code>pull request</code>”，我们试着理解一下它的思路，小明写完代码了心里肯定是在想：<code>原作者大神，我改了点东西，你快把我的修改拉回去吧</code>。站在原作者的角度思考，叫pull request好像也说得过去，每天有大量的人从我这里 fork 代码走，我只会拉取我感兴趣的代码回来。</p>
 <p>我好像把自己说服了。</p>
-<h1 id="3-什么是-Merge-Request？"><a href="#3-什么是-Merge-Request？" class="headerlink" title="3 什么是 Merge Request？"></a>3 什么是 Merge Request？</h1><p>MR 的全称是 <code>Merge Request</code>，相信玩过 Gitlab 的同学都知道这个。</p>
+<h1 id="3-什么是-merge-request"><a class="markdownIt-Anchor" href="#3-什么是-merge-request"></a> 3 什么是 Merge Request？</h1>
+<p>MR 的全称是 <code>Merge Request</code>，相信玩过 Gitlab 的同学都知道这个。</p>
 <p>插播一下，Github这么好用了为什么还有人玩 Gitlab，这就要几年前说起了。在微软没有收购 Github 之前，Github 上面所有的项目必须是公开的，也就是说自己很渣的代码也必须要公开，不能藏着噎着。但是在一些小的公司或者创业团队，代码这种核心资产是不希望被公开，他们迫切需要私密仓这种需求，所以很多人都选择了 Gitlab。当然后面 Github 也放开了私有仓库，这是后话了。</p>
 <p>merge 工作流：</p>
-<p><img src="https://s2.loli.net/2022/04/15/q4NIh1H7ZVA9CR2.png" width="500" height="400" alt="merge 工作流" align="center" id="151"></p>
+<img src="https://s2.loli.net/2022/04/15/q4NIh1H7ZVA9CR2.png" width="500" height="400" alt="merge 工作流" align="center" id="151">
 <p>团队中每个人都从远程仓库 develop 分支拉取代码，本地基于 develop 分支新建特性分支，修改完代码将特性分支推到远程仓，紧接着新建 Merge Request 期望将自己的特性分支合入 develop 分支。</p>
 <p>从上面这个流程来看Merge Request 就是将自己的特性分支合入到主干分支。</p>
-<h1 id="4-Pull-Request-VS-Merge-Request"><a href="#4-Pull-Request-VS-Merge-Request" class="headerlink" title="4 Pull Request VS Merge Request"></a>4 Pull Request VS Merge Request</h1><p>总结一下上面两个例子。</p>
+<h1 id="4-pull-request-vs-merge-request"><a class="markdownIt-Anchor" href="#4-pull-request-vs-merge-request"></a> 4 Pull Request VS Merge Request</h1>
+<p>总结一下上面两个例子。</p>
 <p>Github 是玩 fork 模式的，开发者提交自己的代码新建 Pull Request，请求原作者：“把我的代码拉回去吧”。</p>
 <p>Gitlab 是玩分支模式的，开发者提交自己的代码新建 Merge Request，想将自己的特性分支合并到主干。</p>
 <p>上面总结的好像很有道理，但是不要忘了，Github 也可以玩分支模式，Gitlab 也可以玩 fork 模式，更令人无语的是：</p>
@@ -424,11 +428,12 @@
 </blockquote>
 <p>翻译过来简单理解就是：这两个没有本质区别，站在不同立场说法不一样而已。</p>
 <p><strong>好了，官方已经盖棺定论了，这两个就是一个东西，不要纠结啦~</strong></p>
-<h1 id="5-疯狂吐槽"><a href="#5-疯狂吐槽" class="headerlink" title="5 疯狂吐槽"></a>5 疯狂吐槽</h1><p>对于初学者来说，Github 的 pull request 确实让人难以理解，我们去各大网站看看用户的声音。</p>
+<h1 id="5-疯狂吐槽"><a class="markdownIt-Anchor" href="#5-疯狂吐槽"></a> 5 疯狂吐槽</h1>
+<p>对于初学者来说，Github 的 pull request 确实让人难以理解，我们去各大网站看看用户的声音。</p>
 <p>StackOverflow：</p>
-<p><img src="https://s2.loli.net/2022/04/15/f8jlvChkSD5FBxi.png" width="600" height="400" alt="merge 工作流" align="center" id="152"></p>
+<img src="https://s2.loli.net/2022/04/15/f8jlvChkSD5FBxi.png" width="600" height="400" alt="merge 工作流" align="center" id="152">
 <p>知乎：</p>
-<p><img src="https://s2.loli.net/2022/04/15/LGJDK7hlTadr3Pn.png" width="600" height="400" alt="merge 工作流" align="center" id="153"></p>
+<img src="https://s2.loli.net/2022/04/15/LGJDK7hlTadr3Pn.png" width="600" height="400" alt="merge 工作流" align="center" id="153">
 <p>从国外到国内都有大量的用户对这个名字不理解，明明是提交提交代码，为什么是 pull request，有些人甚至怀疑是名字打错了。</p>
 <p>如果让我来给 Github 取名字，我可能会取：</p>
 <ul>
@@ -436,7 +441,8 @@
 <li><code>merge request</code> 合并请求</li>
 </ul>
 <p>想多了，不会有如果。[嘿哈]</p>
-<h1 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h1><p><code>Pull Request</code> 和<code>Merge Request</code> 本质上都是合入代码，只是站在不同角度有不同的说法而已，因此在学习和工作中无论用哪一个都没有问题。</p>
+<h1 id="6-总结"><a class="markdownIt-Anchor" href="#6-总结"></a> 6 总结</h1>
+<p><code>Pull Request</code> 和<code>Merge Request</code> 本质上都是合入代码，只是站在不同角度有不同的说法而已，因此在学习和工作中无论用哪一个都没有问题。</p>
 <p>鼓励大家在 GitHub上多多提交 PR，为个人简历加分</p>
 
       

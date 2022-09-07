@@ -18,13 +18,13 @@
   
   
   <title>Windows下配置多个Git/Github账号 | Dragon&#39;s Development Blogs</title>
-  <meta name="description" content="1 引入一般情况下，一台电脑配置一个Git账号。但是当需要两个或以上的Github账号时，来回切换非常麻烦，所以需要配置多个Git账号。     Github账号 邮箱 Git SSH KEY     User1 User1@email.com id_rsa_User1   User2 User2@email.com id_rsa_User2     2 生成SSH KEY 打开CMD或者GIT">
+  <meta name="description" content="1 引入 一般情况下，一台电脑配置一个Git账号。但是当需要两个或以上的Github账号时，来回切换非常麻烦，所以需要配置多个Git账号。    Github账号 邮箱 Git SSH KEY     User1 User1@email.com id_rsa_User1   User2 User2@email.com id_rsa_User2     2 生成SSH KEY   打开CMD或者G">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下配置多个Git&#x2F;Github账号">
 <meta property="og:url" content="https://dragonliu2022.github.io/2022/07/05/Windows下配置多个Git-Github账号/index.html">
 <meta property="og:site_name" content="Dragon Liu">
-<meta property="og:description" content="1 引入一般情况下，一台电脑配置一个Git账号。但是当需要两个或以上的Github账号时，来回切换非常麻烦，所以需要配置多个Git账号。     Github账号 邮箱 Git SSH KEY     User1 User1@email.com id_rsa_User1   User2 User2@email.com id_rsa_User2     2 生成SSH KEY 打开CMD或者GIT">
+<meta property="og:description" content="1 引入 一般情况下，一台电脑配置一个Git账号。但是当需要两个或以上的Github账号时，来回切换非常麻烦，所以需要配置多个Git账号。    Github账号 邮箱 Git SSH KEY     User1 User1@email.com id_rsa_User1   User2 User2@email.com id_rsa_User2     2 生成SSH KEY   打开CMD或者G">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.loli.net/2022/07/05/5Qoa8DRf41pGL2A.png">
 <meta property="og:image" content="https://s2.loli.net/2022/07/05/bCyVkL3mYHnGteK.png">
@@ -32,7 +32,7 @@
 <meta property="og:updated_time" content="2022-07-05T14:18:11.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下配置多个Git&#x2F;Github账号">
-<meta name="twitter:description" content="1 引入一般情况下，一台电脑配置一个Git账号。但是当需要两个或以上的Github账号时，来回切换非常麻烦，所以需要配置多个Git账号。     Github账号 邮箱 Git SSH KEY     User1 User1@email.com id_rsa_User1   User2 User2@email.com id_rsa_User2     2 生成SSH KEY 打开CMD或者GIT">
+<meta name="twitter:description" content="1 引入 一般情况下，一台电脑配置一个Git账号。但是当需要两个或以上的Github账号时，来回切换非常麻烦，所以需要配置多个Git账号。    Github账号 邮箱 Git SSH KEY     User1 User1@email.com id_rsa_User1   User2 User2@email.com id_rsa_User2     2 生成SSH KEY   打开CMD或者G">
 <meta name="twitter:image" content="https://s2.loli.net/2022/07/05/5Qoa8DRf41pGL2A.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://dragonliu2022.github.io/2022/07/05/Windows下配置多个Git-Github账号/index.html">
@@ -197,14 +197,14 @@
   <div class="widget">
     <h3 class="widget-title">分类</h3>
     <div class="widget-body">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
  -->
 
   <div class="category-block">
     <h3 class="asidetitle">分类</h3>
-       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">46</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">1</span></li></ul>
+       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
   </div>
   
     
@@ -212,7 +212,7 @@
   <div class="widget">
     <h3 class="widget-title">标签</h3>
     <div class="widget-body">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lab/">Lab</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PA/">PA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/">matplotlib</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码覆盖率/">代码覆盖率</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lab/">Lab</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PA/">PA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/">matplotlib</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码覆盖率/">代码覆盖率</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -222,7 +222,7 @@
   <div class="widget">
     <h3 class="widget-title">标签云</h3>
     <div class="widget-body tagcloud">
-      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Git/" style="font-size: 13.67px;">Git</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Lab/" style="font-size: 13.33px;">Lab</a> <a href="/tags/PA/" style="font-size: 13.5px;">PA</a> <a href="/tags/Ubuntu/" style="font-size: 13.5px;">Ubuntu</a> <a href="/tags/gdb/" style="font-size: 13px;">gdb</a> <a href="/tags/matplotlib/" style="font-size: 13.33px;">matplotlib</a> <a href="/tags/selenium/" style="font-size: 13.17px;">selenium</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/代码覆盖率/" style="font-size: 13.17px;">代码覆盖率</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/深度学习/" style="font-size: 13.17px;">深度学习</a> <a href="/tags/若依/" style="font-size: 13.83px;">若依</a> <a href="/tags/重构/" style="font-size: 13.5px;">重构</a>
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Git/" style="font-size: 13.67px;">Git</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Lab/" style="font-size: 13.33px;">Lab</a> <a href="/tags/PA/" style="font-size: 13.5px;">PA</a> <a href="/tags/Ubuntu/" style="font-size: 13.5px;">Ubuntu</a> <a href="/tags/gdb/" style="font-size: 13px;">gdb</a> <a href="/tags/matplotlib/" style="font-size: 13.33px;">matplotlib</a> <a href="/tags/selenium/" style="font-size: 13.33px;">selenium</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/代码覆盖率/" style="font-size: 13.17px;">代码覆盖率</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/深度学习/" style="font-size: 13.17px;">深度学习</a> <a href="/tags/若依/" style="font-size: 13.83px;">若依</a> <a href="/tags/重构/" style="font-size: 13.5px;">重构</a>
     </div>
   </div>
 
@@ -231,7 +231,7 @@
   <div class="widget">
     <h3 class="widget-title">归档</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -247,13 +247,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/基础/">基础</a>
+                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/爬虫/">爬虫</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/20/Python读取表格日期类型/" class="title">Python读取表格日期类型</a>
+                <a href="/2022/09/07/北航健康上报打卡/" class="title">北航健康上报打卡</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-20T15:57:48.000Z" itemprop="datePublished">2022-07-20</time>
+                <time datetime="2022-09-07T03:25:13.000Z" itemprop="datePublished">2022-09-07</time>
               </p>
             </div>
           </li>
@@ -262,13 +262,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/基础/">基础</a>
+                <a class="category-link" href="/categories/软件开发/">软件开发</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/20/Python读取xlsx表格文件失败/" class="title">Python读取xlsx表格文件失败</a>
+                <a href="/2022/07/26/《人月神话》笔记/" class="title">《人月神话》笔记</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-20T15:46:50.000Z" itemprop="datePublished">2022-07-20</time>
+                <time datetime="2022-07-26T14:14:23.000Z" itemprop="datePublished">2022-07-26</time>
               </p>
             </div>
           </li>
@@ -277,13 +277,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/15/Linux无法识别移动硬盘/" class="title">Linux无法识别移动硬盘</a>
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-15T15:34:58.000Z" itemprop="datePublished">2022-07-15</time>
+                <time datetime="2022-07-25T15:53:32.000Z" itemprop="datePublished">2022-07-25</time>
               </p>
             </div>
           </li>
@@ -292,13 +292,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/15/Linux创建桌面快捷方式/" class="title">Linux创建桌面快捷方式</a>
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-15T11:10:16.000Z" itemprop="datePublished">2022-07-15</time>
+                <time datetime="2022-07-25T07:56:57.000Z" itemprop="datePublished">2022-07-25</time>
               </p>
             </div>
           </li>
@@ -307,13 +307,13 @@
             
             <div class="item-inner">
               <p class="item-category">
-                <a class="category-link" href="/categories/环境与工具/">环境与工具</a>
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/基础/">基础</a>
               </p>
               <p class="item-title">
-                <a href="/2022/07/05/Windows下配置多个Git-Github账号/" class="title">Windows下配置多个Git/Github账号</a>
+                <a href="/2022/07/25/MBR分区表为什么最大只能识别2TB硬盘容量/" class="title">MBR分区表为什么最大只能识别2TB硬盘容量</a>
               </p>
               <p class="item-date">
-                <time datetime="2022-07-05T04:53:24.000Z" itemprop="datePublished">2022-07-05</time>
+                <time datetime="2022-07-25T02:50:37.000Z" itemprop="datePublished">2022-07-25</time>
               </p>
             </div>
           </li>
@@ -333,7 +333,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引入"><span class="toc-number">1.</span> <span class="toc-text">1 引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-生成SSH-KEY"><span class="toc-number">2.</span> <span class="toc-text">2 生成SSH KEY</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-添加至Github"><span class="toc-number">3.</span> <span class="toc-text">3 添加至Github</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-配置config文件"><span class="toc-number">4.</span> <span class="toc-text">4 配置config文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-使用"><span class="toc-number">5.</span> <span class="toc-text">5 使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#X-参考"><span class="toc-number">6.</span> <span class="toc-text">X 参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引入"><span class="toc-number">1.</span> <span class="toc-text"> 1 引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-生成ssh-key"><span class="toc-number">2.</span> <span class="toc-text"> 2 生成SSH KEY</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-添加至github"><span class="toc-number">3.</span> <span class="toc-text"> 3 添加至Github</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-配置config文件"><span class="toc-number">4.</span> <span class="toc-text"> 4 配置config文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-使用"><span class="toc-number">5.</span> <span class="toc-text"> 5 使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x-参考"><span class="toc-number">6.</span> <span class="toc-text"> X 参考</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -394,8 +394,8 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="1-引入"><a href="#1-引入" class="headerlink" title="1 引入"></a>1 引入</h1><p>一般情况下，一台电脑配置一个Git账号。但是当需要两个或以上的Github账号时，来回切换非常麻烦，所以需要配置多个Git账号。</p>
-<div class="table-container">
+        <h1 id="1-引入"><a class="markdownIt-Anchor" href="#1-引入"></a> 1 引入</h1>
+<p>一般情况下，一台电脑配置一个Git账号。但是当需要两个或以上的Github账号时，来回切换非常麻烦，所以需要配置多个Git账号。</p>
 <table>
 <thead>
 <tr>
@@ -407,56 +407,70 @@
 <tbody>
 <tr>
 <td style="text-align:center">User1</td>
-<td style="text-align:center">User1@email.com</td>
+<td style="text-align:center"><a href="mailto:User1@email.com" target="_blank" rel="noopener">User1@email.com</a></td>
 <td style="text-align:center">id_rsa_User1</td>
 </tr>
 <tr>
 <td style="text-align:center">User2</td>
-<td style="text-align:center">User2@email.com</td>
+<td style="text-align:center"><a href="mailto:User2@email.com" target="_blank" rel="noopener">User2@email.com</a></td>
 <td style="text-align:center">id_rsa_User2</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h1 id="2-生成SSH-KEY"><a href="#2-生成SSH-KEY" class="headerlink" title="2 生成SSH KEY"></a>2 生成SSH KEY</h1><ol>
-<li><p>打开CMD或者GIT Bash，生成第一个账号的KEY：</p>
+<h1 id="2-生成ssh-key"><a class="markdownIt-Anchor" href="#2-生成ssh-key"></a> 2 生成SSH KEY</h1>
+<ol>
+<li>
+<p>打开CMD或者GIT Bash，生成第一个账号的KEY：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">E:\&gt;ssh-keygen -t rsa -f <span class="string">"C:\Users\Dragon Liu\.ssh\id_rsa_User1"</span> -C <span class="string">"User1@email.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> C:\Users\Dragon Liu\.ssh\id_rsa_User1.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> C:\Users\Dragon Liu\.ssh\id_rsa_User1.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:QtnbRf80ayMhPJvBE1lUHsDvhdLhgSeA7kdofqzLT/Y User1@email.com</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+---[RSA 3072]----+</span></span><br><span class="line"><span class="string">|         ..o*=oo |</span></span><br><span class="line"><span class="string">|       o. oo+o= .|</span></span><br><span class="line"><span class="string">|      o... B.*o*.|</span></span><br><span class="line"><span class="string">|     .  +o..O =++|</span></span><br><span class="line"><span class="string">|      .+So.o o.+o|</span></span><br><span class="line"><span class="string">|       .o +   o..|</span></span><br><span class="line"><span class="string">|         +o      |</span></span><br><span class="line"><span class="string">|       ..o .     |</span></span><br><span class="line"><span class="string">|        oo. E    |</span></span><br><span class="line"><span class="string">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>生成第二个账号的KEY：</p>
+<li>
+<p>生成第二个账号的KEY：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">E:\&gt;ssh-keygen -t rsa -f <span class="string">"C:\Users\Dragon Liu\.ssh\id_rsa_User2"</span> -C <span class="string">"User2@email.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> C:\Users\Dragon Liu\.ssh\id_rsa_User2.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> C:\Users\Dragon Liu\.ssh\id_rsa_User2.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:Ib6+x8PwGBbgMhBg0l/4IGWBCaTF81mY9BIUjrr8DI8 User2@email.com</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+---[RSA 3072]----+</span></span><br><span class="line"><span class="string">|BB.*O*           |</span></span><br><span class="line"><span class="string">|=.B+*oo          |</span></span><br><span class="line"><span class="string">|...*oBo .        |</span></span><br><span class="line"><span class="string">| .o =oo. .       |</span></span><br><span class="line"><span class="string">|.  o  ..S        |</span></span><br><span class="line"><span class="string">|..    +.         |</span></span><br><span class="line"><span class="string">|.o   ..B         |</span></span><br><span class="line"><span class="string">|  *  .. *        |</span></span><br><span class="line"><span class="string">| E +  oo .       |</span></span><br><span class="line"><span class="string">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>进入当前用户的.ssh目录查看，生成id_rsa私钥文件和id_rsa.pub公钥文件，如下截图：</p>
-<p><img src="https://s2.loli.net/2022/07/05/5Qoa8DRf41pGL2A.png" width="600" height="400" alt="图片名称" align="center" id="207"></p>
+<li>
+<p>进入当前用户的.ssh目录查看，生成id_rsa私钥文件和id_rsa.pub公钥文件，如下截图：</p>
+<img src="https://s2.loli.net/2022/07/05/5Qoa8DRf41pGL2A.png" width="600" height="400" alt="图片名称" align="center" id="207">
 </li>
 </ol>
-<h1 id="3-添加至Github"><a href="#3-添加至Github" class="headerlink" title="3 添加至Github"></a>3 添加至Github</h1><ol>
-<li><p>用户User1和User2分别登陆Github，点击<code>settings</code>，选择<code>SSH and GPG keys</code>，点击<code>New SSH key</code>：</p>
-<p><img src="https://s2.loli.net/2022/07/05/bCyVkL3mYHnGteK.png" width="700" height="300" alt="图片名称" align="center" id="208"></p>
+<h1 id="3-添加至github"><a class="markdownIt-Anchor" href="#3-添加至github"></a> 3 添加至Github</h1>
+<ol>
+<li>
+<p>用户User1和User2分别登陆Github，点击<code>settings</code>，选择<code>SSH and GPG keys</code>，点击<code>New SSH key</code>：</p>
+<img src="https://s2.loli.net/2022/07/05/bCyVkL3mYHnGteK.png" width="700" height="300" alt="图片名称" align="center" id="208">
 </li>
-<li><p><code>Title</code>随便填，<code>Key</code>填<code>id_rsa_xxx.pub</code>的内容（公钥）：</p>
-<p><img src="https://s2.loli.net/2022/07/05/1N5dJFMWxTKG3pE.png" width="600" height="300" alt="图片名称" align="center" id="209"></p>
+<li>
+<p><code>Title</code>随便填，<code>Key</code>填<code>id_rsa_xxx.pub</code>的内容（公钥）：</p>
+<img src="https://s2.loli.net/2022/07/05/1N5dJFMWxTKG3pE.png" width="600" height="300" alt="图片名称" align="center" id="209">
 </li>
 </ol>
-<h1 id="4-配置config文件"><a href="#4-配置config文件" class="headerlink" title="4 配置config文件"></a>4 配置config文件</h1><ol>
-<li><p>在.ssh目录下创建一个<code>config</code>文件，每个账号配置一个Host节点。主要配置项说明：</p>
+<h1 id="4-配置config文件"><a class="markdownIt-Anchor" href="#4-配置config文件"></a> 4 配置config文件</h1>
+<ol>
+<li>
+<p>在.ssh目录下创建一个<code>config</code>文件，每个账号配置一个Host节点。主要配置项说明：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host &lt;主机别名&gt;</span><br><span class="line">    HostName &lt;服务器真实地址&gt;</span><br><span class="line">    IdentityFile &lt;私钥文件路径&gt;</span><br><span class="line">    PreferredAuthentications &lt;认证方式&gt;</span><br><span class="line">    User &lt;用户名&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>配置文件内容：</p>
+<li>
+<p>配置文件内容：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置User1</span></span><br><span class="line">Host User1.github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    IdentityFile <span class="string">"C:\\Users\\Dragon Liu\\.ssh\\id_rsa_User1"</span></span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    User User1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置User2</span></span><br><span class="line">Host User2.github.com</span><br><span class="line">    HostName github.com</span><br><span class="line">    IdentityFile <span class="string">"C:\\Users\\Dragon Liu\\.ssh\\id_rsa_User2"</span></span><br><span class="line">    PreferredAuthentications publickey</span><br><span class="line">    User User2</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>配置完成后，在cmd或者Git Bash中输入以下命令测试该用户的SSH密钥是否生效：</p>
+<li>
+<p>配置完成后，在cmd或者Git Bash中输入以下命令测试该用户的SSH密钥是否生效：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@User1.github.com</span><br><span class="line">ssh -T git@User2.github.com</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h1 id="5-使用"><a href="#5-使用" class="headerlink" title="5 使用"></a>5 使用</h1><ol>
-<li><p>为各仓库单独配置用户名和邮箱：</p>
+<h1 id="5-使用"><a class="markdownIt-Anchor" href="#5-使用"></a> 5 使用</h1>
+<ol>
+<li>
+<p>为各仓库单独配置用户名和邮箱：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name <span class="string">"User1"</span></span><br><span class="line">git config user.email <span class="string">"User1@email.com"</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>远程仓库地址需要修改：</p>
+<li>
+<p>远程仓库地址需要修改：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 原来的</span></span><br><span class="line">git@github.com:xxx/xxxxx.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进行修改</span></span><br><span class="line">git remote rm origin</span><br><span class="line">git remote add origin git@User1.github.com:xxx/xxxxx.git</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h1 id="X-参考"><a href="#X-参考" class="headerlink" title="X 参考"></a>X 参考</h1><ul>
+<h1 id="x-参考"><a class="markdownIt-Anchor" href="#x-参考"></a> X 参考</h1>
+<ul>
 <li><a href="https://blog.csdn.net/q13554515812/article/details/83506172" target="_blank" rel="noopener">配置多个Git账号（windows 10）</a></li>
 </ul>
 

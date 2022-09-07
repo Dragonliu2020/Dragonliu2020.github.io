@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题 | Dragon&#39;s Development Blogs</title>
+  <meta name="description" content="第1章：Linux是什么与如何学习   1 笔记  另外，不要再说没兴趣了。没有花时间去了解一下，不要跟人家说你没兴趣！而且，兴趣也是靠培养来的！除了某些特殊人物之外， 没有花时间去培养兴趣，怎么可能会有兴趣。   2 习题  1.1 你在你的主机上面安装了一张网络卡，但是开机之后，系统却无法使用，你确定网络卡是好的，那么可能的问题出在哪里？该如何解决？ 因为所有的硬件都没有问题，所以，可能出问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题">
+<meta property="og:url" content="https://dragonliu2022.github.io/2022/07/24/《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="第1章：Linux是什么与如何学习   1 笔记  另外，不要再说没兴趣了。没有花时间去了解一下，不要跟人家说你没兴趣！而且，兴趣也是靠培养来的！除了某些特殊人物之外， 没有花时间去培养兴趣，怎么可能会有兴趣。   2 习题  1.1 你在你的主机上面安装了一张网络卡，但是开机之后，系统却无法使用，你确定网络卡是好的，那么可能的问题出在哪里？该如何解决？ 因为所有的硬件都没有问题，所以，可能出问">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-07-24T06:44:57.196Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题">
+<meta name="twitter:description" content="第1章：Linux是什么与如何学习   1 笔记  另外，不要再说没兴趣了。没有花时间去了解一下，不要跟人家说你没兴趣！而且，兴趣也是靠培养来的！除了某些特殊人物之外， 没有花时间去培养兴趣，怎么可能会有兴趣。   2 习题  1.1 你在你的主机上面安装了一张网络卡，但是开机之后，系统却无法使用，你确定网络卡是好的，那么可能的问题出在哪里？该如何解决？ 因为所有的硬件都没有问题，所以，可能出问">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://dragonliu2022.github.io/2022/07/24/《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Dragon&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Development</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</br>dragonliu2018@gmail.com</br>电脑端观看效果更佳！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      <!-- 
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
+    </div>
+  </div>
+ -->
+
+  <div class="category-block">
+    <h3 class="asidetitle">分类</h3>
+       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
+  </div>
+  
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lab/">Lab</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PA/">PA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/">matplotlib</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码覆盖率/">代码覆盖率</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Git/" style="font-size: 13.67px;">Git</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Lab/" style="font-size: 13.33px;">Lab</a> <a href="/tags/PA/" style="font-size: 13.5px;">PA</a> <a href="/tags/Ubuntu/" style="font-size: 13.5px;">Ubuntu</a> <a href="/tags/gdb/" style="font-size: 13px;">gdb</a> <a href="/tags/matplotlib/" style="font-size: 13.33px;">matplotlib</a> <a href="/tags/selenium/" style="font-size: 13.33px;">selenium</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/代码覆盖率/" style="font-size: 13.17px;">代码覆盖率</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/深度学习/" style="font-size: 13.17px;">深度学习</a> <a href="/tags/若依/" style="font-size: 13.83px;">若依</a> <a href="/tags/重构/" style="font-size: 13.5px;">重构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/爬虫/">爬虫</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/07/北航健康上报打卡/" class="title">北航健康上报打卡</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-07T03:25:13.000Z" itemprop="datePublished">2022-09-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/软件开发/">软件开发</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/26/《人月神话》笔记/" class="title">《人月神话》笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-26T14:14:23.000Z" itemprop="datePublished">2022-07-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T15:53:32.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T07:56:57.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/基础/">基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/MBR分区表为什么最大只能识别2TB硬盘容量/" class="title">MBR分区表为什么最大只能识别2TB硬盘容量</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T02:50:37.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-笔记"><span class="toc-number">1.</span> <span class="toc-text"> 1 笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-习题"><span class="toc-number">2.</span> <span class="toc-text"> 2 习题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#11-你在你的主机上面安装了一张网络卡但是开机之后系统却无法使用你确定网络卡是好的那么可能的问题出在哪里该如何解决"><span class="toc-number">2.1.</span> <span class="toc-text"> 1.1 你在你的主机上面安装了一张网络卡，但是开机之后，系统却无法使用，你确定网络卡是好的，那么可能的问题出在哪里？该如何解决？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-一个操作系统至少要能够完整的控制整个硬件请问操作系统应该要控制硬件的哪些单元"><span class="toc-number">2.2.</span> <span class="toc-text"> 1.2 一个操作系统至少要能够完整的控制整个硬件，请问，操作系统应该要控制硬件的哪些单元？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-我在-windows-上面玩的游戏可不可以拿到-linux-去玩"><span class="toc-number">2.3.</span> <span class="toc-text"> 1.3 我在 Windows 上面玩的游戏，可不可以拿到 Linux 去玩？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-linux-本身仅是一个核心与相关的核心工具而已不过他已经可以驱动所有的硬件-所以可以算是一个很普通的操作系统了-经过其他应用程序的开发之后被整合成为-linux-distribitions-请问众多的distributions-之间有何异同"><span class="toc-number">2.4.</span> <span class="toc-text"> 1.4 Linux 本身仅是一个核心与相关的核心工具而已，不过，他已经可以驱动所有的硬件， 所以，可以算是一个很普通的操作系统了。经过其他应用程序的开发之后，被整合成为 Linux distribitions。请问众多的distributions 之间，有何异同？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-unix-是谁写出来的-gnu-计划是谁发起的"><span class="toc-number">2.5.</span> <span class="toc-text"> 1.5 Unix 是谁写出来的？ GNU 计划是谁发起的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-gnu-的全名为何他主要由那个基金会支持"><span class="toc-number">2.6.</span> <span class="toc-text"> 1.6 GNU 的全名为何？他主要由那个基金会支持？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17-何谓多人-multi-user-多任务-multitask"><span class="toc-number">2.7.</span> <span class="toc-text"> 1.7 何谓多人 ( Multi-user ) 多任务 ( Multitask )？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18-简单说明-gnu-general-public-license-gpl-与-open-source-的精神"><span class="toc-number">2.8.</span> <span class="toc-text"> 1.8 简单说明 GNU General Public License ( GPL ) 与 Open Source 的精神：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19-什么是-posix-为何说-linux-使用-posix-对于发展有很好的影响"><span class="toc-number">2.9.</span> <span class="toc-text"> 1.9 什么是 POSIX ?为何说 Linux 使用 POSIX 对于发展有很好的影响？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#110-简单说明-linux-成功的因素"><span class="toc-number">2.10.</span> <span class="toc-text"> 1.10 简单说明 Linux 成功的因素？</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/07/24/《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题/" class="article-date">
+	  <time datetime="2022-07-24T02:49:40.000Z" itemprop="datePublished">2022-07-24</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>►<a class="article-category-link" href="/categories/操作系统/Linux/">Linux</a>►<a class="article-category-link" href="/categories/阅读/">阅读</a>
+  </span>
+
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/24/《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.2k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <blockquote>
+<p>第1章：Linux是什么与如何学习</p>
+</blockquote>
+<h1 id="1-笔记"><a class="markdownIt-Anchor" href="#1-笔记"></a> 1 笔记</h1>
+<blockquote>
+<p>另外，不要再说没兴趣了。没有花时间去了解一下，不要跟人家说你没兴趣！而且，兴趣也是靠培养来的！除了某些特殊人物之外， 没有花时间去培养兴趣，怎么可能会有兴趣。</p>
+</blockquote>
+<h1 id="2-习题"><a class="markdownIt-Anchor" href="#2-习题"></a> 2 习题</h1>
+<h2 id="11-你在你的主机上面安装了一张网络卡但是开机之后系统却无法使用你确定网络卡是好的那么可能的问题出在哪里该如何解决"><a class="markdownIt-Anchor" href="#11-你在你的主机上面安装了一张网络卡但是开机之后系统却无法使用你确定网络卡是好的那么可能的问题出在哪里该如何解决"></a> 1.1 你在你的主机上面安装了一张网络卡，但是开机之后，系统却无法使用，你确定网络卡是好的，那么可能的问题出在哪里？该如何解决？</h2>
+<p>因为所有的硬件都没有问题，所以，可能出问题的地方在于系统的核心(kernel) 不支持这张网络卡。解决的方法：</p>
+<ol>
+<li>到网络卡的开发商网站</li>
+<li>下载支持你主机操作系统的驱动程序</li>
+<li>安装网卡驱动程序后，就可以使用了。</li>
+</ol>
+<h2 id="12-一个操作系统至少要能够完整的控制整个硬件请问操作系统应该要控制硬件的哪些单元"><a class="markdownIt-Anchor" href="#12-一个操作系统至少要能够完整的控制整个硬件请问操作系统应该要控制硬件的哪些单元"></a> 1.2 一个操作系统至少要能够完整的控制整个硬件，请问，操作系统应该要控制硬件的哪些单元？</h2>
+<p>根据硬件的运作，以及数据在主机上面的运算情况与写入/读取情况，我们知道至少要能够控制：</p>
+<ol>
+<li>input/output control</li>
+<li>device control</li>
+<li>process management</li>
+<li>file management等等</li>
+</ol>
+<h2 id="13-我在-windows-上面玩的游戏可不可以拿到-linux-去玩"><a class="markdownIt-Anchor" href="#13-我在-windows-上面玩的游戏可不可以拿到-linux-去玩"></a> 1.3 我在 Windows 上面玩的游戏，可不可以拿到 Linux 去玩？</h2>
+<p>当然不行！因为游戏也是一个应用程序 (application)，他必须要使用到核心所提供的工具来开发他的游戏， 所以这个游戏是不可在不同的平台间运作的。除非这个游戏已经进行了移植。</p>
+<h2 id="14-linux-本身仅是一个核心与相关的核心工具而已不过他已经可以驱动所有的硬件-所以可以算是一个很普通的操作系统了-经过其他应用程序的开发之后被整合成为-linux-distribitions-请问众多的distributions-之间有何异同"><a class="markdownIt-Anchor" href="#14-linux-本身仅是一个核心与相关的核心工具而已不过他已经可以驱动所有的硬件-所以可以算是一个很普通的操作系统了-经过其他应用程序的开发之后被整合成为-linux-distribitions-请问众多的distributions-之间有何异同"></a> 1.4 Linux 本身仅是一个核心与相关的核心工具而已，不过，他已经可以驱动所有的硬件， 所以，可以算是一个很普通的操作系统了。经过其他应用程序的开发之后，被整合成为 Linux distribitions。请问众多的distributions 之间，有何异同？</h2>
+<p><strong>相同</strong>：</p>
+<ol>
+<li>同样使用 <a href="http://www.kernel.org" target="_blank" rel="noopener">http://www.kernel.org</a> 所释出的核心；</li>
+<li>支持同样的标准，如 FHS、LSB 等；</li>
+<li>使用几乎相同的自由软件 (例如 GNU 里面的 gcc/glibc/vi/apache/bind/sendmail… )；</li>
+<li>几乎相同的操作接口 (例如均使用 bash/KDE/GNOME 等等)。</li>
+</ol>
+<p><strong>不同</strong>：</p>
+<ol>
+<li>使用的 kernel 与各软件的版本可能会不同；</li>
+<li>各开发商加入的应用工具不同，使用的套件管理模式不同(dpkg 与 RPM)</li>
+</ol>
+<h2 id="15-unix-是谁写出来的-gnu-计划是谁发起的"><a class="markdownIt-Anchor" href="#15-unix-是谁写出来的-gnu-计划是谁发起的"></a> 1.5 Unix 是谁写出来的？ GNU 计划是谁发起的？</h2>
+<p>Unix 是 Ken Thompson 写的，1973 年再由 Dennis Ritchie 以 C 语言改写成功。</p>
+<p>至于 GNU 与 FSF 则是 Richard Stallman 发起的。</p>
+<h2 id="16-gnu-的全名为何他主要由那个基金会支持"><a class="markdownIt-Anchor" href="#16-gnu-的全名为何他主要由那个基金会支持"></a> 1.6 GNU 的全名为何？他主要由那个基金会支持？</h2>
+<p>GNU 是 GNU is Not Unix 的简写，是个无穷循环！</p>
+<p>另外，这个计划是由自由软件基金会 (Free Software Foundation, FSF) 所支持的！ 两者都是由 Stallman 先生所发起的！</p>
+<h2 id="17-何谓多人-multi-user-多任务-multitask"><a class="markdownIt-Anchor" href="#17-何谓多人-multi-user-多任务-multitask"></a> 1.7 何谓多人 ( Multi-user ) 多任务 ( Multitask )？</h2>
+<p>Multiuser 指的是 Linux 允许多人同时连上主机之外，每个用户皆有其各人的使用环境，并且可以同时使用系统的资源！</p>
+<p>Multitask 指的是多任务环境，在 Linux 系统下， CPU 与其他例如网络资源可以同时进行多项工作， Linux 最大的特色之一即在于其多任务时，资源分配较为平均！</p>
+<h2 id="18-简单说明-gnu-general-public-license-gpl-与-open-source-的精神"><a class="markdownIt-Anchor" href="#18-简单说明-gnu-general-public-license-gpl-与-open-source-的精神"></a> 1.8 简单说明 GNU General Public License ( GPL ) 与 Open Source 的精神：</h2>
+<ol>
+<li>GPL 的授权之软件，乃为自由软件（Free software），任何人皆可拥有他；</li>
+<li>开发 GPL 的团体(或商业企业)可以经由该软件的服务来取得服务的费用；</li>
+<li>经过 GPL 授权的软件，其属于 Open source 的情况，所以应该公布其原始码；</li>
+<li>任何人皆可修改经由 GPL 授权过的软件，使符合自己的需求；</li>
+<li>经过修改过后 Open source 应该回馈给 Linux 社群。</li>
+</ol>
+<h2 id="19-什么是-posix-为何说-linux-使用-posix-对于发展有很好的影响"><a class="markdownIt-Anchor" href="#19-什么是-posix-为何说-linux-使用-posix-对于发展有很好的影响"></a> 1.9 什么是 POSIX ?为何说 Linux 使用 POSIX 对于发展有很好的影响？</h2>
+<p>POSIX 是一种标准规范，主要针对在 Unix 操作系统上面跑的程序来进行规范。若你的操作系统符合 POSIX ，则符合 POSIX 的程序就可以在你的操作系统上面运作。</p>
+<p>Linux 由于支持 POSIX ，因此很多 Unix 上的程序可以直接在 Linux 上运作， 因此程序的移植相当简易！也让大家容易转换平台，提升 Linux 的使用率。</p>
+<h2 id="110-简单说明-linux-成功的因素"><a class="markdownIt-Anchor" href="#110-简单说明-linux-成功的因素"></a> 1.10 简单说明 Linux 成功的因素？</h2>
+<ol>
+<li>藉由 Minix 操作系统开发的 Unix like ，没有版权的纠纷；</li>
+<li>藉助于 GNU 计划所提供的各项工具软件， gcc/bash 等；</li>
+<li>藉由 Internet 广为流传；</li>
+<li>藉由支持 POSIX 标准，让核心能够适合所有软件的开发；</li>
+<li>托瓦兹强调务实，虚拟团队的自然形成！</li>
+</ol>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://dragonliu2022.github.io/2022/07/24/《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题/" title="《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题" target="_blank" rel="external">https://dragonliu2022.github.io/2022/07/24/《鸟哥的Linux私房菜基础学习篇（第四版）》第1章笔记与习题/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Dragon&#39;s Blogs</span><small class="ml-1x">Development</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/07/24/《鸟哥的Linux私房菜基础学习篇（第四版）》第2章笔记与习题/" title="《鸟哥的Linux私房菜基础学习篇（第四版）》第2章笔记与习题"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/07/23/《鸟哥的Linux私房菜基础学习篇（第四版）》第0章笔记与习题/" title="《鸟哥的Linux私房菜基础学习篇（第四版）》第0章笔记与习题"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

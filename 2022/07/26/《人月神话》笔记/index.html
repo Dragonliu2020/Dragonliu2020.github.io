@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>《人月神话》笔记 | Dragon&#39;s Development Blogs</title>
+  <meta name="description" content="1 焦油坑   编程系统产品（Programming Systems Product）开发的工作量是供个人使用的、独立开发的构件程序的九倍。我估计软件构件产品化引起了 3 倍工作量，将软件构件整合成完整系统所需要的设计、集成和测试又强加了 3 倍的工作量，这些高成本的构件在根本上是相互独立的。   编程行业“满足我们内心深处的创造渴望和愉悦所有人的共有情感”，提供了五种乐趣：   创建事物的快乐">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《人月神话》笔记">
+<meta property="og:url" content="https://dragonliu2022.github.io/2022/07/26/《人月神话》笔记/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="1 焦油坑   编程系统产品（Programming Systems Product）开发的工作量是供个人使用的、独立开发的构件程序的九倍。我估计软件构件产品化引起了 3 倍工作量，将软件构件整合成完整系统所需要的设计、集成和测试又强加了 3 倍的工作量，这些高成本的构件在根本上是相互独立的。   编程行业“满足我们内心深处的创造渴望和愉悦所有人的共有情感”，提供了五种乐趣：   创建事物的快乐">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-07-26T15:35:55.871Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《人月神话》笔记">
+<meta name="twitter:description" content="1 焦油坑   编程系统产品（Programming Systems Product）开发的工作量是供个人使用的、独立开发的构件程序的九倍。我估计软件构件产品化引起了 3 倍工作量，将软件构件整合成完整系统所需要的设计、集成和测试又强加了 3 倍的工作量，这些高成本的构件在根本上是相互独立的。   编程行业“满足我们内心深处的创造渴望和愉悦所有人的共有情感”，提供了五种乐趣：   创建事物的快乐">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://dragonliu2022.github.io/2022/07/26/《人月神话》笔记/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Dragon&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Development</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</br>dragonliu2018@gmail.com</br>电脑端观看效果更佳！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      <!-- 
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
+    </div>
+  </div>
+ -->
+
+  <div class="category-block">
+    <h3 class="asidetitle">分类</h3>
+       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
+  </div>
+  
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lab/">Lab</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PA/">PA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/">matplotlib</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码覆盖率/">代码覆盖率</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Git/" style="font-size: 13.67px;">Git</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Lab/" style="font-size: 13.33px;">Lab</a> <a href="/tags/PA/" style="font-size: 13.5px;">PA</a> <a href="/tags/Ubuntu/" style="font-size: 13.5px;">Ubuntu</a> <a href="/tags/gdb/" style="font-size: 13px;">gdb</a> <a href="/tags/matplotlib/" style="font-size: 13.33px;">matplotlib</a> <a href="/tags/selenium/" style="font-size: 13.33px;">selenium</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/代码覆盖率/" style="font-size: 13.17px;">代码覆盖率</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/深度学习/" style="font-size: 13.17px;">深度学习</a> <a href="/tags/若依/" style="font-size: 13.83px;">若依</a> <a href="/tags/重构/" style="font-size: 13.5px;">重构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/爬虫/">爬虫</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/07/北航健康上报打卡/" class="title">北航健康上报打卡</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-07T03:25:13.000Z" itemprop="datePublished">2022-09-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/软件开发/">软件开发</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/26/《人月神话》笔记/" class="title">《人月神话》笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-26T14:14:23.000Z" itemprop="datePublished">2022-07-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T15:53:32.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T07:56:57.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/基础/">基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/MBR分区表为什么最大只能识别2TB硬盘容量/" class="title">MBR分区表为什么最大只能识别2TB硬盘容量</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T02:50:37.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-焦油坑"><span class="toc-number">1.</span> <span class="toc-text"> 1 焦油坑</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-人月神话"><span class="toc-number">2.</span> <span class="toc-text"> 2 人月神话</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-外科手术队伍"><span class="toc-number">3.</span> <span class="toc-text"> 3 外科手术队伍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-贵族专制-民主政治和系统设计"><span class="toc-number">4.</span> <span class="toc-text"> 4 贵族专制、民主政治和系统设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-画蛇添足"><span class="toc-number">5.</span> <span class="toc-text"> 5 画蛇添足</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-贯彻执行"><span class="toc-number">6.</span> <span class="toc-text"> 6 贯彻执行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-为什么巴比伦塔会失败"><span class="toc-number">7.</span> <span class="toc-text"> 7 为什么巴比伦塔会失败？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-胸有成竹"><span class="toc-number">8.</span> <span class="toc-text"> 8 胸有成竹</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-削足适履"><span class="toc-number">9.</span> <span class="toc-text"> 9 削足适履</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-提纲挈领"><span class="toc-number">10.</span> <span class="toc-text"> 10 提纲挈领</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-未雨绸缪"><span class="toc-number">11.</span> <span class="toc-text"> 11 未雨绸缪</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-干将莫邪"><span class="toc-number">12.</span> <span class="toc-text"> 12 干将莫邪</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13-整体部分"><span class="toc-number">13.</span> <span class="toc-text"> 13 整体部分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14-祸起萧墙"><span class="toc-number">14.</span> <span class="toc-text"> 14 祸起萧墙</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15-另外一面"><span class="toc-number">15.</span> <span class="toc-text"> 15 另外一面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#16-没有银弹-软件工程中的根本和次要问题"><span class="toc-number">16.</span> <span class="toc-text"> 16 没有银弹－软件工程中的根本和次要问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#17-再论没有银弹"><span class="toc-number">17.</span> <span class="toc-text"> 17 再论《没有银弹》</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-《人月神话》笔记" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      《人月神话》笔记
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/07/26/《人月神话》笔记/" class="article-date">
+	  <time datetime="2022-07-26T14:14:23.000Z" itemprop="datePublished">2022-07-26</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/软件开发/">软件开发</a>►<a class="article-category-link" href="/categories/阅读/">阅读</a>
+  </span>
+
+        
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/26/《人月神话》笔记/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 9.3k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 31(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="1-焦油坑"><a class="markdownIt-Anchor" href="#1-焦油坑"></a> 1 焦油坑</h1>
+<ul>
+<li>
+<p>编程系统产品（Programming Systems Product）开发的工作量是供个人使用的、独立开发的构件程序的九倍。我估计软件构件产品化引起了 3 倍工作量，将软件构件整合成完整系统所需要的设计、集成和测试又强加了 3 倍的工作量，这些高成本的构件在根本上是相互独立的。</p>
+</li>
+<li>
+<p>编程行业“满足我们内心深处的创造渴望和愉悦所有人的共有情感”，提供了五种乐趣：</p>
+</li>
+<li>
+<p>创建事物的快乐</p>
+</li>
+<li>
+<p>开发对其他人有用的东西的乐趣</p>
+</li>
+<li>
+<p>将可以活动、相互啮合的零部件组装成类似迷宫的东西，这个过程所体现出令人神魂颠倒的魅力</p>
+</li>
+<li>
+<p>面对不重复的任务，不间断学习的乐趣</p>
+</li>
+<li>
+<p>工作在如此易于驾驭的介质上的乐趣——纯粹的思维活动，其存在、移动和运转方式完全不同于实际物体</p>
+</li>
+<li>
+<p>同样，这个行业具有一些内在固有的苦恼：</p>
+</li>
+<li>
+<p>将做事方式调整到追求完美，是学习编程的最困难部分</p>
+</li>
+<li>
+<p>由其他人来设定目标，并且必须依靠自己无法控制的事物（特别是程序）；权威不等同于责任</p>
+</li>
+<li>
+<p>实际情况看起来要比这一点好一些：真正的权威来自于每次任务的完成</p>
+</li>
+<li>
+<p>任何创造性活动都伴随着枯燥艰苦的劳动，编程也不例外</p>
+</li>
+<li>
+<p>人们通常期望项目在接近结束时，（bug、工作时间）能收敛得快一些，然而软件项目的情况却是越接近完成，收敛得越慢</p>
+</li>
+<li>
+<p>产品在即将完成时总面临着陈旧过时的威胁</p>
+</li>
+</ul>
+<h1 id="2-人月神话"><a class="markdownIt-Anchor" href="#2-人月神话"></a> 2 人月神话</h1>
+<ul>
+<li>
+<p>简化的Brooks 法则：向进度落后的项目中增加人手，只会使进度更加落后。（Adding manpower to a late software project makes it later）</p>
+<p>这就是除去了神话色彩的人月。项目的时间依赖于顺序上的限制，人员的数量依赖于单个子任务的数量。在众多软件项目中，缺乏合理的时间进度是造成项目滞后的最主要原因，它比其他所有因素加起来的影响还要大。</p>
+</li>
+<li>
+<p>良好的烹饪需要时间，某些任务无法在不损害结果的情况下加快速度。</p>
+</li>
+<li>
+<p>所有的编程人员都是乐观主义者：“一切都将运作良好”。</p>
+</li>
+<li>
+<p>由于编程人员通过纯粹的思维活动来开发，所以我们期待在实现过程中不会碰到困难。</p>
+</li>
+<li>
+<p>但是，我们的构思是有缺陷的，因此总会有 bug。</p>
+</li>
+<li>
+<p>我们围绕成本核算的估计技术，混淆了工作量和项目进展。人月是危险和带有欺骗性的神话，因为它暗示人员数量和时间是可以相互替换的。</p>
+</li>
+<li>
+<p>在若干人员中分解任务会引发额外的沟通工作量——培训和相互沟通。</p>
+</li>
+<li>
+<p>关于进度安排，我的经验是为 1/3 计划、1/6 编码、1/4 构件测试以及 1/4 系统测试。</p>
+</li>
+<li>
+<p>作为一个学科，我们缺乏数据估计。</p>
+</li>
+<li>
+<p>因为我们对自己的估计技术不确定，所以在管理和客户的压力下，我们常常缺乏坚持的勇气。</p>
+</li>
+<li>
+<p>向软件项目中增派人手从三个方面增加了项目必要的总体工作量：任务重新分配本身和所造成的工作中断；培训新人员；额外的相互沟通。</p>
+</li>
+</ul>
+<h1 id="3-外科手术队伍"><a class="markdownIt-Anchor" href="#3-外科手术队伍"></a> 3 外科手术队伍</h1>
+<ul>
+<li>这就是小型、精干队伍概念上的问题：对于真正意义上的大型系统，它太慢了。</li>
+<li>同样有两年经验而且在受到同样的培训的情况下，优秀的专业程序员的工作效率是较差程序员的十倍。（Sackman、Erikson 和 Grand）</li>
+<li>Sackman、Erikson 和 Grand 的数据显示经验和实际表现之间没有相互联系。我怀疑这种现象是否普遍成立。</li>
+<li>小型、精干队伍是最好的——尽可能的少。</li>
+<li>两个人的团队，其中一个项目经理，常常是最佳的人员使用方法。[留意一下上帝对婚姻的设计。]</li>
+<li>对于真正意义上的大型系统，小型精干的队伍太慢了。</li>
+<li>实际上，绝大多数大型编程系统的经验显示出，一拥而上的开发方法是高成本、速度缓慢、不充分的，开发出的产品无法进行概念上的集成。</li>
+<li>一位首席程序员、类似于外科手术队伍的团队架构提供了一种方法——既能获得由少数头脑产生的产品完整性，又能得到多位协助人员的总体生产率，还彻底地减少了沟通的工作量。</li>
+</ul>
+<h1 id="4-贵族专制-民主政治和系统设计"><a class="markdownIt-Anchor" href="#4-贵族专制-民主政治和系统设计"></a> 4 贵族专制、民主政治和系统设计</h1>
+<ul>
+<li>“概念完整性是系统设计中最重要的考虑因素”。</li>
+<li>“功能与理解上的复杂程度的比值才是系统设计的最终测试标准”，而不仅仅是丰富的功能。[该比值是对易用性的一种测量，由简单和复杂应用共同验证。]</li>
+<li>为了获得概念完整性，设计必须由一个人或者具有共识的小型团队来完成。</li>
+<li>“对于非常大型的项目，将设计方法、体系结构方面的工作与具体实现相分离是获得概念完整性的强有力方法。”[同样适用于小型项目。]</li>
+<li>“如果要得到系统概念上的完整性，那么必须控制这些概念。这实际上是一种无需任何歉意的贵族专制统治。”</li>
+<li>纪律、规则对行业是有益的。外部的体系结构规定实际上是增强，而不是限制实现小组的创造性。</li>
+<li>概念上统一的系统能更快地开发和测试。</li>
+<li>体系结构（architecture）、设计实现（implementation）、物理实现（realization）的许多工作可以并发进行。[软件和硬件设计同样可以并行。]</li>
+</ul>
+<h1 id="5-画蛇添足"><a class="markdownIt-Anchor" href="#5-画蛇添足"></a> 5 画蛇添足</h1>
+<ul>
+<li>尽早交流和持续沟通能使结构师有较好的成本意识，以及使开发人员获得对设计的信心，并且不会混淆各自的责任分工。</li>
+<li>结构师如何成功地影响实现：
+<ul>
+<li>牢记是开发人员承担创造性的实现责任；结构师只能提出建议。</li>
+<li>时刻准备着为所指定的说明建议一种实现的方法，准备接受任何其他可行的方法。</li>
+<li>对上述的建议保持低调和平静。</li>
+<li>准备对所建议的改进放弃坚持。</li>
+<li>听取开发人员在体系结构上改进的建议。</li>
+</ul>
+</li>
+<li>第二个系统是人们所设计的最危险的系统，通常的倾向是过分地进行设计。</li>
+<li>OS/360 是典型的画蛇添足（second-system effect）的例子。[Windows NT 似乎是90 年代的例子。]</li>
+<li>为功能分配一个字节和微秒的优先权值是一个很有价值的规范化方法。</li>
+</ul>
+<h1 id="6-贯彻执行"><a class="markdownIt-Anchor" href="#6-贯彻执行"></a> 6 贯彻执行</h1>
+<ul>
+<li>即使是大型的设计团队，设计结果也必须由一个或两个人来完成，以确保这些决定是一致的。</li>
+<li>必须明确定义体系结构中与先前定义不同的地方，重新定义的详细程度应该与原先的说明一致。</li>
+<li>出于精确性的考虑，我们需要形式化的设计定义，同样，我们需要记叙性定义来加深理解。</li>
+<li>必须采用形式化定义和记叙性定义中的一种作为标准，另一种作为辅助措施；它们都可以作为表达的标准。</li>
+<li>设计实现，包括模拟仿真，可以充当一种形式化定义的方法；这种方法有一些严重的缺点。</li>
+<li>直接整合是一种强制推行软件的结构性标准的方法。[硬件上也是如此——考虑内建在 ROM 中的 Mac WIMP 接口。]</li>
+<li>“如果起初至少有两种以上的实现，那么（体系结构）定义会更加整洁，会更加规范。”</li>
+<li>允许体系结构师对实现人员的询问做出电话应答解释是非常重要的，并且必须进行日志记录和整理发布。[电子邮件是一种可选的介质。]</li>
+<li>“项目经理最好的朋友就是他每天要面对的敌人——独立的产品测试机构/小组。”</li>
+</ul>
+<h1 id="7-为什么巴比伦塔会失败"><a class="markdownIt-Anchor" href="#7-为什么巴比伦塔会失败"></a> 7 为什么巴比伦塔会失败？</h1>
+<ul>
+<li>巴比伦塔项目的失败是因为缺乏交流，以及交流的结果——组织。</li>
+<li>“因为左手不知道右手在做什么，从而进度灾难、功能的不合理和系统缺陷纷纷出现。”由于对其他人的各种假设，团队成员之间的理解开始出现偏差。</li>
+<li>团队应该以尽可能多的方式进行相互之间的交流：非正式、常规项目会议，会上进行简要的技术陈述、共享的正式项目工作手册。[以及电子邮件。]</li>
+<li>项目工作手册“不是独立的一篇文档，它是对项目必须产生的一系列文档进行组织的一种结构。”</li>
+<li>“项目所有的文档都必须是该（工作手册）结构的一部分。”</li>
+<li>需要尽早和仔细地设计工作手册结构。</li>
+<li>事先制订了良好结构的工作手册“可以将后来书写的文字放置在合适的章节中”，并且可以提高产品手册的质量。</li>
+<li>“每一个团队成员应该了解所有的材料（工作手册）。”[我想说的是，每个团队成员应该能够看到所有材料，网页即可满足要求。]</li>
+<li>实时更新是至关重要的。</li>
+<li>工作手册的使用者应该将注意力集中在上次阅读后的变更，以及关于这些变更重要性的评述。</li>
+<li>OS/360 项目工作手册开始采用的是纸介质，后来换成了微缩胶片。</li>
+<li>今天[即使在 1975 年]，共享的电子手册是能更好达到所有这些目标、更加低廉、更加简单的机制。</li>
+<li>仍然需要用变更条和修订日期[或具备同等功能的方法]来标记文字；仍然需要后进先出（LIFO）的电子化变更小结。</li>
+<li>Parnas 强烈地认为使每个人看到每件事的目标是完全错误的；各个部分应该被封装，从而没有人需要或者允许看到其他部分的内部结构，只需要了解接口。</li>
+<li>Parnas 的建议的确是灾难的处方。[Parnas 让我认可了该观点，使我彻底地改变了想法。]</li>
+<li>团队组织的目标是为了减少必要的交流和协作量。</li>
+<li>为了减少交流，组织结构包括了人力划分（division of labor）和限定职责范围（specialization of function）。</li>
+<li>传统的树状组织结构反映了权力的结构原理——不允许双重领导。</li>
+<li>组织中的交流是网状，而不是树状结构，因而所有的特殊组织机制（往往体现成组织结构图中的虚线部分）都是为了进行调整，以克服树状组织结构中交流缺乏的困难。</li>
+<li>每个子项目具有两个领导角色——产品负责人、技术主管或结构师。这两个角色的职能有着很大的区别，需要不同的技能。</li>
+<li>两种角色中的任意组合可以是非常有效的：
+<ul>
+<li>产品负责人和技术主管是同一个人。</li>
+<li>产品负责人作为总指挥，技术主管充当其左右手。</li>
+<li>技术主管作为总指挥，产品负责人充当其左右手。</li>
+</ul>
+</li>
+</ul>
+<h1 id="8-胸有成竹"><a class="markdownIt-Anchor" href="#8-胸有成竹"></a> 8 胸有成竹</h1>
+<ul>
+<li>仅仅通过对编码部分的估计，然后乘以任务其他部分的相对系数，是无法得出对整项工作的精确估计的。</li>
+<li>构建独立小型程序的数据不适用于编程系统项目。</li>
+<li>程序开发呈程序规模的指数增长。</li>
+<li>一些发表的研究报告显示指数约为 1.5。[Boehm 的数据并不完全一致，在 1.05 和1.2 之间变化。]</li>
+<li>Portman 的 ICL 数据显示相对于其他活动开销，全职程序员仅将 50％的时间用于编程和调试。</li>
+<li>IBM 的 Aron 数据显示，生产率是系统各个部分交互的函数，在 1.5K 千代码行/人年至 10K 千代码行/人年的范围内变化。</li>
+<li>Harr 的 Bell 实验室数据显示对于已完成的产品，操作系统类的生产率大约是0.6KLOC/人年，编译类工作的生产率大约为 2.2KLOC/人年。</li>
+<li>Brooks 的 OS/360S 数据与 Harr 的数据一致：操作系统 0.6～0.8KLOC/人年，编译器 2～3 KLOC/人年。</li>
+<li>Corbato 的 MIT 项目 MULTICS 数据显示，在操作系统和编译器混合类型上的生产率 是 1.2KLOC/人年，但这些是 PL/I 的代码行，而其他所有的数据是汇编代码行。</li>
+<li>在基本语句级别，生产率看上去是个常数。</li>
+<li>当使用适当的高级语言时，程序编制的生产率可以提高 5 倍。</li>
+</ul>
+<h1 id="9-削足适履"><a class="markdownIt-Anchor" href="#9-削足适履"></a> 9 削足适履</h1>
+<ul>
+<li>除了运行时间以外，所占据的内存空间也是主要开销。特别是对于操作系统，它的很多程序是永久驻留在内存中。</li>
+<li>即便如此，花费在驻留程序所占据内存上的金钱仍是物有所值的，比其他任何在配置上投资的效果要好。规模本身不是坏事，但不必要的规模是不可取的。</li>
+<li>软件开发人员必须设立规模目标，控制规模，发明一些减少规模的方法——就如同硬件开发人员为减少元器件所做的一样。</li>
+<li>规模预算不仅仅在占据内存方面是明确的，同时还应该指明程序对磁盘的访问次数。</li>
+<li>规模预算必须与分配的功能相关联；在指明模块大小的同时，确切定义模块的功能。</li>
+<li>在大型的团队中，各个小组倾向于不断地局部优化，以满足自己的目标，而较少考虑队用户的整体影响。这种方向性的问题是大型项目的主要危险。</li>
+<li>在整个实现的过程期间，系统结构师必须保持持续的警觉，确保连贯的系统完整性。</li>
+<li>培养开发人员从系统整体出发、面向用户的态度是软件编程管理人员最重要的职能。</li>
+<li>在早期应该制订策略，以决定用户可选项目的粗细程度，因为将它们作为整体大包能够节省内存空间。[常常还可以节约市场成本。]</li>
+<li>临时空间的尺寸，以及每次磁盘访问的程序数量是很关键的决策，因为性能是规模的非线性函数。[这个整体决策已显得过时——起初是由于虚拟内存，后来则是成本低廉的内存。现在的用户通常会购买能容纳主要应用程序所有代码的内存。]</li>
+<li>为了取得良好的空间－时间折衷，开发队伍需要得到特定与某种语言或者机型的编程技能培训，特别是在使用新语言或者新机器时。</li>
+<li>编程需要技术积累，每个项目需要自己的标准组件库。</li>
+<li>库中的每个组件需要有两个版本，运行速度较快和短小精炼的。[现在看来有些过时。]</li>
+<li>精炼、充分和快速的程序。往往是战略性突破的结果，而不仅仅技巧上的提高。</li>
+<li>这种突破常常是一种新型算法。</li>
+<li>更普遍的是，战略上突破常来自于数据或表的重新表达。数据的表现形式是编程的根本。</li>
+</ul>
+<h1 id="10-提纲挈领"><a class="markdownIt-Anchor" href="#10-提纲挈领"></a> 10 提纲挈领</h1>
+<ul>
+<li>“前提：在一片文件的汪洋中，少数文档形成了关键的枢纽，每个项目管理的工作都围绕着它们运转。它们是经理们的主要个人工具。”</li>
+<li>对于计算机硬件开发项目，关键文档是目标、手册、进度、预算、组织机构图、空间分配、以及机器本身的报价、预测和价格。</li>
+<li>对于大学科系，关键文档类似：目标、课程描述、学位要求、研究报告、课程表和课程的安排、预算、教室分配、教师和研究生助手的分配。</li>
+<li>对于软件项目，要求是相同的：目标、用户手册、内部文档、进度、预算、组织机构图和工作空间分配。</li>
+<li>因此，即使是小型项目，项目经理也应该在项目早期规范化上述的一系列文档。</li>
+<li>以上集合中每一个文档的准备工作都将注意力集中在对讨论的思索和提炼，而书写这项活动需要上百次的细小决定，正是由于它们的存在，人们才能从令人迷惑的现象中得到清晰、确定的策略。</li>
+<li>对每个关键文档的维护提供了状态监督和预警机制。</li>
+<li>每个文档本身就可以作为检查列表或者数据库。</li>
+<li>项目经理的基本职责是使每个人都向着相同的方向前进。</li>
+<li>项目经理的主要日常工作是沟通，而不是做出决定；文档使各项计划和决策在整个团队范围内得到交流。</li>
+<li>只有一小部分管理人员的时间——可能只有 20%——用来从自己头脑外部获取信息。</li>
+<li>出于这个原因，广受吹捧的市场概念——支持管理人员的“完备信息管理系统”并不基于反映管理人员行为的有效模型。</li>
+</ul>
+<h1 id="11-未雨绸缪"><a class="markdownIt-Anchor" href="#11-未雨绸缪"></a> 11 未雨绸缪</h1>
+<ul>
+<li>化学工程师已经认识到无法一步将实验室工作台上的反应过程移到工厂中，需要一个实验性工厂（pilot planet）来为提高产量和在缺乏保护的环境下运作提供宝贵经验。</li>
+<li>对于编程产品而言，这样的中间步骤是同样必要的，但是软件工程师在着手发布产品之前，却并不会常规地进行试验性系统的现场测试。[现在，这已经成为了一项普遍的实践，beta 版本。它不同于有限功能的原型，alpha 版本，后者同样是我所倡导的实践。]</li>
+<li>对于大多数项目，第一个开发的系统并不合用。它可能太慢、太大，而且难以使用，或者三者兼而有之。</li>
+<li>系统的丢弃和重新设计可以一步完成，也可以一块块地实现。这是个必须完成的步骤。</li>
+<li>将开发的第一个系统——丢弃原型——发布给用户，可以获得时间，但是它的代价高昂——对于用户，使用极度痛苦；对于重新开发的人员，分散了精力；对于产品，影响了声誉，即使最好的再设计也难以挽回名声。</li>
+<li>因此，为舍弃而计划，无论如何，你一定要这样做。</li>
+<li>“开发人员交付的是用户满意程度，而不仅仅是实际的产品。”（Cosgrove）</li>
+<li>用户的实际需要和用户感觉会随着程序的构建、测试和使用而变化。</li>
+<li>软件产品易于掌握的特性和不可见性，导致了它的构建人员（特别容易）面临着永恒的需求变更。</li>
+<li>目标上（和开发策略上）的一些正常变化无可避免，事先为它们做准备总比假设它们不会出现要好得多。</li>
+<li>为变更计划软件产品的技术，特别是细致的模块接口文档——非常地广为人知，但并没有相同规模的实践。尽可能地使用表驱动技术同样是有所帮助的。[现在内存的成本和规模使这项技术越来越出众。]</li>
+<li>高级语言的使用、编译时操作、通过引用的声明整合和自文档技术能减少变更引起的错误。</li>
+<li>采用定义良好的数字化版本将变更量子（阶段）化。[当今的标准实践。]</li>
+<li>程序员不愿意为设计书写文档的原因，不仅仅是由于惰性。更多的是源于设计人员的踌躇——要为自己尝试性的设计决策进行辩解。（Cosgrove）</li>
+<li>为变更组建团队比为变更进行设计更加困难。</li>
+<li>只要管理人员和技术人才的天赋允许，老板必须对他们的能力培养给予极大的关注，使管理人员和技术人才具有互换性；特别是希望能在技术和管理角色之间自由地分配人手的时候。</li>
+<li>具有两条晋升线的高效组织机构，存在着一些社会性的障碍，人们必须警惕和积极地同它做持续的斗争。</li>
+<li>很容易为不同的晋升线建立相互一致的薪水级别，但要同等威信的建立需要一些强烈的心理措施：相同的办公室、一样的支持和技术调动的优先补偿。</li>
+<li>组建外科手术队伍式的软件开发团队是对上述问题所有方面的彻底冲击。对于灵活组织架构问题，这的确是一个长期行之有效的解决方案。</li>
+<li>程序维护基本上不同于硬件的维护；它主要由各种变更组成，如修复设计缺陷、新增功能、或者是使用环境或者配置变换引起的调整。</li>
+<li>对于一个广泛使用的程序，其维护总成本通常是开发成本的 40％或更多。</li>
+<li>维护成本受用户数目的严重影响。用户越多，所发现的错误也越多。</li>
+<li>Campbell 指出了一个显示产品生命期中每月 bug 数的有趣曲线，它先是下降，然后攀升。</li>
+<li>缺陷修复总会以（20－50）%的机率引入新的 bug。</li>
+<li>在每次修复之后，必须重新运行先前所有的测试用例，从而确保系统不会以更隐蔽的方式被破坏。</li>
+<li>能消除、至少是能指明副作用的程序设计方法，对维护成本有很大的影响。</li>
+<li>同样，设计实现的人员越少、接口越少，产生的错误也就越少。</li>
+<li>Lehman 和 Belady 发现模块数量随大型操作系统（OS/360）版本号的增加呈线性增长，但是受到影响的模块以版本号指数的级别增长。</li>
+<li>所有修改都倾向于破坏系统的架构，增加了系统的混乱程度。即使是最熟练的软件维护工作，也只是放缓了系统退化到不可修复混乱的进程，从中必须要重新进行设计。[许多程序升级的真正需要，如性能等，尤其会冲击它的内部结构边界。原有边界引发的不足常常在日后才会出现。]</li>
+</ul>
+<h1 id="12-干将莫邪"><a class="markdownIt-Anchor" href="#12-干将莫邪"></a> 12 干将莫邪</h1>
+<ul>
+<li>项目经理应该制订一套策略，以及为通用工具的开发分配资源，与此同时，他还必须意识到专业工具的需求。</li>
+<li>开发操作系统的队伍需要自己的目标机器，进行调试开发工作。相对于最快的速度而言，它更需要最大限度的内存，还需要安排一名系统程序员，以保证机器上的标准软件是即时更新和实时可用的。</li>
+<li>同时还需要配备调试机器或者软件，以便在调试过程中，所有类型的程序参数可以被自动计数和测量。</li>
+<li>目标机器的使用需求量是一种特殊曲线：刚开始使用率非常低，突然出现爆发性的增长，接着趋于平缓。</li>
+<li>同天文工作者一样，系统调试总是大部分在夜间完成。</li>
+<li>抛开理论不谈，一次分配给某个小组连续的目标时间块被证明是最好的安排方法，比不同小组的穿插使用更为有效。</li>
+<li>尽管技术不断变化，这种采用时间块来安排匮乏计算机资源的方式仍得以延续20 年[在 1975 年]，是因为它的生产率最高。[在 1995 年依然如此]</li>
+<li>如果目标机器是新产品，则需要一个目标机器的逻辑仿真装置。这样，可以更 快地得到辅助调试平台。即使在真正机器出现之后，仿真装置仍可提供可靠的调试平台。</li>
+<li>主程序库应该被划分成（1）一系列独立的私有开发库；（2）正处在系统测试下的系统集成子库；（3）发布版本。正式的分离和进度提供了控制。</li>
+<li>在编制程序的项目中，节省最大工作量的工具可能是文本编辑系统。</li>
+<li>系统文档中的巨大容量带来了新的不理解问题[例如，看看 Unix]，但是它比大多数未能详细描述编程系统特性的短小文章更加可取。</li>
+<li>自顶向下、彻底地开发一个性能仿真装置。尽可能早地开始这项工作，仔细地听取 “它们表达的意见”。</li>
+<li>只有懒散和惰性会妨碍高级语言和交互式编程的广泛应用。[如今它们已经在全世界使用。]</li>
+<li>高级语言不仅仅提升了生产率，而且还改进了调试：bug 更少，以及更容易寻找。</li>
+<li>传统的反对意见——功能、目标代码的尺寸、目标代码的速度，随着语言和编译器技术的进步已不再成为问题。</li>
+<li>现在可供合理选择的语言是 PL/I。[不再正确。]</li>
+<li>某些应用上，批处理系统决不会被交互式系统所替代。[依然成立。]</li>
+<li>调试是系统编程中很慢和较困难的部分，而漫长的调试周转时间是调试的祸根。</li>
+<li>有限的数据表明了系统软件开发中，交互式编程的生产率至少是原来的两倍。</li>
+</ul>
+<h1 id="13-整体部分"><a class="markdownIt-Anchor" href="#13-整体部分"></a> 13 整体部分</h1>
+<ul>
+<li>第 4、5、6 章所意味的煞费苦心、详尽体系结构工作不但使产品更加易于使用，而且使开发更容易进行以及 bug 更不容易产生。</li>
+<li>V.A.Vyssotsky 提出，“许许多多的失败完全源于那些产品未精确定义的地方。”</li>
+<li>在编写任何代码之前，规格说明必须提交给测试小组，以详细地检查说明的完整性和明确性。开发人员自己不会完成这项工作。（Vyssotsky）</li>
+<li>“十年内[1965～1975]，Wirth 的自顶向下进行设计[逐步细化]将会是最重要的新型形式化软件开发方法。”</li>
+<li>Wirth 主张在每个步骤中，尽可能使用级别较高的表达方法。</li>
+<li>好的自顶向下设计从四个方面避免了 bug。</li>
+<li>有时必须回退，推翻顶层设计，重新开始。</li>
+<li>结构化编程中，程序的控制结构仅由支配代码块（相对于任意的跳转）的给定集合所组成。这种方法出色地避免了 bug，是一种正确的思考方式。</li>
+<li>Gold 结果显示了，在交互式调试过程中，第一次交互取得的工作进展是后续交互的三倍。这实际上获益于在调试开始之前仔细地调试计划。[我认为在 1995 年依然如此。]</li>
+<li>我发现对良好终端系统的正确使用，往往要求每两小时的终端会话对应于两小时的桌面工作：1 小时会话后的清理和文档工作；1 小时为下一次计划变更和测试。</li>
+<li>系统调试（相对于单元测试）花费的时间会比预料的更长。</li>
+<li>系统调试的困难程度证明了需要一种完备系统化和可计划的方法。</li>
+<li>系统调试仅仅应该在所有部件能够运作之后开始。（这既不同于为了查出接口bug 所采取 “合在一起尝试” 的方法；也不同于在所有构件单元的 bug 已知，但未修复的情况下，即开始系统调试的做法。）[对于多个团队尤其如此。]</li>
+<li>开发大量的辅助调试平台（scaffolding 脚手架）和测试代码是很值得的，代码量甚至可能会有测试对象的一半。</li>
+<li>必须有人对变更进行控制和文档化，团队成员应使用开发库的各种受控拷贝来工作。</li>
+<li>系统测试期间，一次只添加一个构件。</li>
+<li>Lehman 和 Belady 出示了证据，变更的阶段（量子）要么很大，间隔很宽；要么小和频繁。后者很容易变得不稳定。[Microsoft 的一个团队使用了非常小的阶段（量子）。结果是每天晚上需要重新编译生成增长中的系统。]</li>
+</ul>
+<h1 id="14-祸起萧墙"><a class="markdownIt-Anchor" href="#14-祸起萧墙"></a> 14 祸起萧墙</h1>
+<ul>
+<li>里程碑有明显边界和没有歧义，比它容易被老板核实更为重要。如果里程碑定义得非常明确，以致于无法自欺欺人时，很少有人会就里程碑的进展弄虚作假。但是如果里程碑很模糊，老板就常常会得到一份与实际情况不符的报告。毕竟，没有人愿意承受坏消息。这种做法只是为了起到缓和的作用，并没有任何蓄意的欺骗。</li>
+<li>“项目是怎样延迟了整整一年的时间？…一次一天。”</li>
+<li>一天一天的进度落后比起重大灾难，更难以识别、更不容易防范和更加难以弥补。</li>
+<li>根据一个严格的进度表来控制项目的第一个步骤是制订进度表，进度表由里程碑和日期组成。</li>
+<li>里程碑必须是具体的、特定的、可度量的事件，能进行清晰能定义。</li>
+<li>如果里程碑定义得非常明确，以致于无法自欺欺人时，程序员很少会就里程碑的进展弄虚作假。</li>
+<li>对于大型开发项目中的估计行为，政府的承包商所做的研究显示：每两周进行仔细修订的活动时间估计，随着开始时间的临近不会有太大的变化；期间内对时间长短的过 高估计，会随着活动的进行持续下降；过低估计直到计划的结束日期之前大约三周左右，才有所变化。</li>
+<li>慢性进度偏离是士气杀手。[Microsoft 的 Jim McCarthy 说：“如果你错过了一个最终期限（deadline），确保制订下一条 deadline。”]</li>
+<li>进取对于杰出的软件开发团队，同优秀的棒球队伍一样，是不可缺少的必要品德。</li>
+<li>不存在关键路径进度的替代品，使人们能够辨别计划偏移的情况。</li>
+<li>PERT 的准备工作是 PERT 图使用中最有价值的部分。它包括了整个网状结构的展开、任务之间依赖关系的识别、各个任务链的估计。这些都要求在项目早期进行非常专业的计划。</li>
+<li>第一份 PERT 图总是很恐怖的，不过人们总是不断进行努力，运用才智制订下一份 PERT 图。</li>
+<li>PERT 图为前面那个泄气的借口，“其他的部分反正会落后”，提供了答案。</li>
+<li>每个老板同时需要采取行动的异常信息以及用来进行分析和早期预警的状态数据。</li>
+<li>状态的获取是困难的，因为下属经理有充分的理由不提供信息共享。</li>
+<li>老板的不良反应肯定会对信息的完全公开造成压制；相反，仔细区分状态报告、毫无惊慌地接收报告、决不越俎代庖，将能鼓励诚实的汇报。</li>
+<li>必须有评审的机制，从而所有成员可以通过它了解真正的状态。出于这个目的，里程碑的计划和完成文档是关键。</li>
+<li>Vyssotsky：我发现在里程碑报告中很容易记录“计划（老板的日期）”和“估计（最基层经理的日期）”的日期。项目经理必须停止对这些日期的怀疑。”</li>
+<li>对于大型项目，一个对里程碑报告进行维护的计划和控制（Plan and Control）小组是非常可贵的。</li>
+</ul>
+<h1 id="15-另外一面"><a class="markdownIt-Anchor" href="#15-另外一面"></a> 15 另外一面</h1>
+<ul>
+<li>对于软件编程产品来说，程序向用户所呈现的面貌与提供给机器识别的内容同样重要。</li>
+<li>即使对于完全开发给自己使用的程序，描述性文字也是必须的，因为它们会被用户－作者所遗忘。</li>
+<li>培训和管理人员基本上没有能向编程人员成功地灌输对待文档的积极态度——文档能在整个生命周期对克服懒惰和进度的压力起促进激励作用。</li>
+<li>这样的失败并不都是因为缺乏热情或者说服力，而是没能正确地展示如何有效和经济地编制文档。</li>
+<li>大多数文档只提供了很少的总结性内容。必须放慢脚步，稳妥地进行。</li>
+<li>由于关键的用户文档包含了跟软件相关的基本决策，所以它的绝大部分需要在程序编制之前书写，它包括了 9 项内容（参见相应章节）。</li>
+<li>每一份发布的程序拷贝应该包括一些测试用例，其中一部分用于校验输入数据，一部分用于边界输入数据，另一部分用于无效的输入数据。</li>
+<li>对于必须修改程序的人而言，他们所需要程序内部结构文档，同样要求一份清晰明了的概述，它包括了 5 项内容（参见相应章节）。</li>
+<li>流程图是被吹捧得最过分的一种程序文档。详细逐一记录的流程图是一件令人生厌的事情，而且高级语言的出现使它显得陈旧过时。（流程图是图形化的高级语言。）</li>
+<li>如果这样，很少有程序需要一页纸以上的流程图。[在这一点上，MILSPEC 军用标准实在错得很厉害。]</li>
+<li>即使的确需要一张程序结构图，也并不需要遵照 ANSI 的流程图标准。</li>
+<li>为了使文档易于维护，将它们合并至源程序是至关重要的，而不是作为独立文档进行保存。</li>
+<li>最小化文档负担的 3 个关键思路：
+<ul>
+<li>借助那些必须存在的语句，如名称和声明等，来附加尽可能多的“文档”信息。</li>
+<li>使用空格和格式来表现从属和嵌套关系，提高程序的可读性。</li>
+<li>以段落注释，特别是模块标题的形式，向程序中插入必要的记叙性文字。</li>
+</ul>
+</li>
+<li>程序修改人员所使用的文档中，除了描述事情如何以外，还应阐述它为什么那样。对于加深理解，目的是非常关键的，但即使是高级语言的语法，也不能表达目的。</li>
+<li>在线系统的高级语言（应该使用的工具）中，自文档化技术发现了它的绝佳应用和强大功能</li>
+</ul>
+<h1 id="16-没有银弹-软件工程中的根本和次要问题"><a class="markdownIt-Anchor" href="#16-没有银弹-软件工程中的根本和次要问题"></a> 16 没有银弹－软件工程中的根本和次要问题</h1>
+<ul>
+<li>所有软件活动包括根本任务——打造由抽象软件实体构成的复杂概念结构，次要任务——使用编程语言表达这些抽象实体，在空间和时间限制内将它们映射成机器语言。</li>
+</ul>
+<h1 id="17-再论没有银弹"><a class="markdownIt-Anchor" href="#17-再论没有银弹"></a> 17 再论《没有银弹》</h1>
+<ul>
+<li>重用是一件说起来容易，做起来难的事情。它同时需要良好的设计和文档。即使我们看到了并不十分常见的优秀设计，但如果没有好的文档，我们也不会看到能重用的构件。</li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://dragonliu2022.github.io/2022/07/26/《人月神话》笔记/" title="《人月神话》笔记" target="_blank" rel="external">https://dragonliu2022.github.io/2022/07/26/《人月神话》笔记/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Dragon&#39;s Blogs</span><small class="ml-1x">Development</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/09/07/北航健康上报打卡/" title="北航健康上报打卡"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题/" title="《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

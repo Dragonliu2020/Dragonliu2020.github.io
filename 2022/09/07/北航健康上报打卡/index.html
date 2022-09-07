@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>北航健康上报打卡 | Dragon&#39;s Development Blogs</title>
+  <meta name="description" content="1 引言 需求：打卡很容易忘记，想自动化处理此事。 声明：学习与技术讨论，勿实操！！！  2 思路  思路主要参考：https://github.com/mottled233/buaa_daily_report   在Windows下编写脚本，使用chrome+selenium，模拟浏览器点击；  打开网页并登陆 进行打卡   通过 win10toast 实现在 Win10 系统中发送桌面消息通">
+<meta name="keywords" content="selenium">
+<meta property="og:type" content="article">
+<meta property="og:title" content="北航健康上报打卡">
+<meta property="og:url" content="https://dragonliu2022.github.io/2022/09/07/北航健康上报打卡/index.html">
+<meta property="og:site_name" content="Dragon Liu">
+<meta property="og:description" content="1 引言 需求：打卡很容易忘记，想自动化处理此事。 声明：学习与技术讨论，勿实操！！！  2 思路  思路主要参考：https://github.com/mottled233/buaa_daily_report   在Windows下编写脚本，使用chrome+selenium，模拟浏览器点击；  打开网页并登陆 进行打卡   通过 win10toast 实现在 Win10 系统中发送桌面消息通">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/07/b9866e6c7db775c2.png">
+<meta property="og:image" content="https://s3.bmp.ovh/imgs/2022/09/07/90b81e137f8ae056.png">
+<meta property="og:updated_time" content="2022-09-07T15:05:54.463Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="北航健康上报打卡">
+<meta name="twitter:description" content="1 引言 需求：打卡很容易忘记，想自动化处理此事。 声明：学习与技术讨论，勿实操！！！  2 思路  思路主要参考：https://github.com/mottled233/buaa_daily_report   在Windows下编写脚本，使用chrome+selenium，模拟浏览器点击；  打开网页并登陆 进行打卡   通过 win10toast 实现在 Win10 系统中发送桌面消息通">
+<meta name="twitter:image" content="https://s3.bmp.ovh/imgs/2022/09/07/b9866e6c7db775c2.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://dragonliu2022.github.io/2022/09/07/北航健康上报打卡/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Dragon Liu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dragonliu2018" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Dragon&#39;s Blogs</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Development</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Nanjing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</br>dragonliu2018@gmail.com</br>电脑端观看效果更佳！</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      <!-- 
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
+    </div>
+  </div>
+ -->
+
+  <div class="category-block">
+    <h3 class="asidetitle">分类</h3>
+       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/基础/">基础</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/面试/">面试</a><span class="category-list-count">6</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/Spring-Boot/">Spring Boot</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/基础/">基础</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">47</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/基础/">基础</a><span class="category-list-count">38</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/数据库/">数据库</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/爬虫/">爬虫</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/人工智能/">人工智能</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Element/">Element</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/Vue/">Vue</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/区块链/">区块链</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/大数据/">大数据</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/基础/">基础</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/">数据库</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/MySQL/">MySQL</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Neo4j/">Neo4j</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/Redis/">Redis</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/环境与工具/">环境与工具</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/计组/">计组</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件开发/">软件开发</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a><span class="category-list-count">7</span></li></ul>
+  </div>
+  
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CV/">CV</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Graphviz/">Graphviz</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lab/">Lab</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PA/">PA</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gdb/">gdb</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/matplotlib/">matplotlib</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码覆盖率/">代码覆盖率</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/待补充/">待补充</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/深度学习/">深度学习</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/若依/">若依</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/重构/">重构</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/CV/" style="font-size: 13px;">CV</a> <a href="/tags/Git/" style="font-size: 13.67px;">Git</a> <a href="/tags/Graphviz/" style="font-size: 13px;">Graphviz</a> <a href="/tags/Hexo/" style="font-size: 13.5px;">Hexo</a> <a href="/tags/Lab/" style="font-size: 13.33px;">Lab</a> <a href="/tags/PA/" style="font-size: 13.5px;">PA</a> <a href="/tags/Ubuntu/" style="font-size: 13.5px;">Ubuntu</a> <a href="/tags/gdb/" style="font-size: 13px;">gdb</a> <a href="/tags/matplotlib/" style="font-size: 13.33px;">matplotlib</a> <a href="/tags/selenium/" style="font-size: 13.33px;">selenium</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/代码覆盖率/" style="font-size: 13.17px;">代码覆盖率</a> <a href="/tags/待补充/" style="font-size: 14px;">待补充</a> <a href="/tags/深度学习/" style="font-size: 13.17px;">深度学习</a> <a href="/tags/若依/" style="font-size: 13.83px;">若依</a> <a href="/tags/重构/" style="font-size: 13.5px;">重构</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">四月 2022</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">三月 2022</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Python/">Python</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/Python/爬虫/">爬虫</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/07/北航健康上报打卡/" class="title">北航健康上报打卡</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-07T03:25:13.000Z" itemprop="datePublished">2022-09-07</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/软件开发/">软件开发</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/26/《人月神话》笔记/" class="title">《人月神话》笔记</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-26T14:14:23.000Z" itemprop="datePublished">2022-07-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第4章笔记与习题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T15:53:32.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/Linux/">Linux</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/阅读/">阅读</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题/" class="title">《鸟哥的Linux私房菜基础学习篇（第四版）》第3章笔记与习题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T07:56:57.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/操作系统/">操作系统</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/操作系统/基础/">基础</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/07/25/MBR分区表为什么最大只能识别2TB硬盘容量/" class="title">MBR分区表为什么最大只能识别2TB硬盘容量</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-07-25T02:50:37.000Z" itemprop="datePublished">2022-07-25</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-引言"><span class="toc-number">1.</span> <span class="toc-text"> 1 引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-思路"><span class="toc-number">2.</span> <span class="toc-text"> 2 思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-实现"><span class="toc-number">3.</span> <span class="toc-text"> 3 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-打卡脚本"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 打卡脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#32-windows消息提醒脚本"><span class="toc-number">3.2.</span> <span class="toc-text"> 3.2 Windows消息提醒脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#33-定时执行脚本"><span class="toc-number">3.3.</span> <span class="toc-text"> 3.3 定时执行脚本</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-参考"><span class="toc-number">4.</span> <span class="toc-text"> 4 参考</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-北航健康上报打卡" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      北航健康上报打卡
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/09/07/北航健康上报打卡/" class="article-date">
+	  <time datetime="2022-09-07T03:25:13.000Z" itemprop="datePublished">2022-09-07</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/爬虫/">爬虫</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/selenium/">selenium</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/07/北航健康上报打卡/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.3k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 6(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="1-引言"><a class="markdownIt-Anchor" href="#1-引言"></a> 1 引言</h1>
+<p><strong>需求</strong>：打卡很容易忘记，想自动化处理此事。</p>
+<p><strong>声明</strong>：学习与技术讨论，勿实操！！！</p>
+<h1 id="2-思路"><a class="markdownIt-Anchor" href="#2-思路"></a> 2 思路</h1>
+<blockquote>
+<p>思路主要参考：<a href="https://github.com/mottled233/buaa_daily_report" target="_blank" rel="noopener">https://github.com/mottled233/buaa_daily_report</a></p>
+</blockquote>
+<ol>
+<li>在Windows下编写脚本，使用chrome+selenium，模拟浏览器点击；
+<ul>
+<li>打开网页并登陆</li>
+<li>进行打卡</li>
+</ul>
+</li>
+<li>通过 <strong>win10toast</strong> 实现在 Win10 系统中发送桌面消息通知；</li>
+<li>借助<code>Server酱+PushDeer</code> 推送打卡结果至手机；</li>
+<li>最终，使用Windows自带的<code>任务计划程序</code>实现定时执行脚本。</li>
+</ol>
+<h1 id="3-实现"><a class="markdownIt-Anchor" href="#3-实现"></a> 3 实现</h1>
+<h2 id="31-打卡脚本"><a class="markdownIt-Anchor" href="#31-打卡脚本"></a> 3.1 打卡脚本</h2>
+<p><strong>daily_report.py</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.action_chains <span class="keyword">import</span> ActionChains</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"></span><br><span class="line">user = <span class="string">"xxx"</span>  <span class="comment"># 你的统一认证账号</span></span><br><span class="line">passwd = <span class="string">"xxx"</span>  <span class="comment"># 你的统一认证密码</span></span><br><span class="line">position = (<span class="string">"39.97812"</span>, <span class="string">"116.343936"</span>)  <span class="comment"># 定位，经纬度, 这个经纬度是大运村三号楼</span></span><br><span class="line">SCKEY = <span class="string">"xxx"</span>  <span class="comment"># 微信推送api，到http://sc.ftqq.com/ 免费申请，不需要请留空</span></span><br><span class="line">max_attempt = <span class="number">5</span>  <span class="comment"># 失败重复五次</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log_config</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    日志文件配置</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    log_file = <span class="string">"log.log"</span></span><br><span class="line">    formatter = logging.Formatter(<span class="string">"%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s"</span>)</span><br><span class="line">    logger = logging.getLogger(<span class="string">"main"</span>)</span><br><span class="line">    fh = logging.FileHandler(log_file, mode=<span class="string">'w'</span>)</span><br><span class="line">    fh.setFormatter(formatter)</span><br><span class="line">    ch = logging.StreamHandler()</span><br><span class="line">    ch.setFormatter(formatter)</span><br><span class="line">    logger.addHandler(fh)</span><br><span class="line">    logger.addHandler(ch)</span><br><span class="line">    logger.setLevel(logging.INFO)</span><br><span class="line">    <span class="keyword">return</span> logger</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sign_in</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    模拟签到</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    logger.info(<span class="string">"正在进行验证..."</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Step1 测试能否进入网页以及用户名密码是否正确</span></span><br><span class="line">    chrome_options = Options()</span><br><span class="line">    chrome_options.add_argument(<span class="string">'--headless'</span>)</span><br><span class="line">    chrome_options.add_argument(<span class="string">'--disable-gpu'</span>)</span><br><span class="line">    chrome_options.add_argument(<span class="string">'--no-sandbox'</span>)</span><br><span class="line">    browser = webdriver.Chrome(chrome_options=chrome_options)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        url = <span class="string">"https://app.buaa.edu.cn/uc/wap/login?redirect=https%3A%2F%2Fapp.buaa.edu.cn%2Fsite%2FbuaaStudentNcov%2Findex"</span></span><br><span class="line">        browser.get(url)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 账号密码</span></span><br><span class="line">        user_name_input = browser.find_element_by_css_selector(</span><br><span class="line">            <span class="string">'#app &gt; div.content &gt; div:nth-child(1) &gt; input[type=text]'</span>)</span><br><span class="line">        user_name_input.send_keys(user)</span><br><span class="line">        user_pwd_input = browser.find_element_by_css_selector(</span><br><span class="line">            <span class="string">'#app &gt; div.content &gt; div:nth-child(2) &gt; input[type=password]'</span>)</span><br><span class="line">        user_pwd_input.send_keys(passwd)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        logger.info(<span class="string">"打开打卡网页失败，请确认网络"</span>)</span><br><span class="line">        send_message(<span class="string">"北航打卡：打开打卡网页失败，请确认网络"</span>)</span><br><span class="line">        exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    logger.info(<span class="string">"成功打开打卡网页"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 点击登录按钮</span></span><br><span class="line">    login_button = browser.find_element_by_css_selector(<span class="string">'#app &gt; div.btn'</span>)</span><br><span class="line">    ActionChains(browser).move_to_element(login_button).click(login_button).perform()</span><br><span class="line">    browser.implicitly_wait(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 跳转并点击获取位置按钮</span></span><br><span class="line">    <span class="comment"># 这样写是为了等待跳转页面加载出来</span></span><br><span class="line">    fail_cnt = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        location_button = browser.find_elements_by_css_selector(</span><br><span class="line">            <span class="string">'body &gt; div.buaaStudentNcov &gt; div.buaaStudentNcov-bg &gt; div &gt; div:nth-child(5) &gt; div &gt; div.warp-list-choose &gt; div.warp-list.two-warp-list.warp-list-margin &gt; div.title-input.title-input-mergin-left'</span>)</span><br><span class="line">        <span class="keyword">if</span> len(location_button) &gt; <span class="number">0</span>:</span><br><span class="line">            logger.info(<span class="string">"登录成功"</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 出现密码错误提示框</span></span><br><span class="line">            <span class="keyword">if</span> len(browser.find_elements_by_css_selector(<span class="string">'div.wapat-btn-box'</span>)) &gt; <span class="number">0</span>:</span><br><span class="line">                send_message(<span class="string">"北航打卡：打卡失败，用户名密码错误，程序已退出，请检查"</span>)</span><br><span class="line">                logger.info(<span class="string">"打卡失败，用户名密码错误，请检查"</span>)</span><br><span class="line">                exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 若只是反应慢，重试</span></span><br><span class="line">            <span class="keyword">if</span> fail_cnt &gt;= max_attempt:</span><br><span class="line">                send_message(<span class="string">"北航打卡：登录超时超过最大尝试次数，请检查网络或打卡系统已崩溃"</span>)</span><br><span class="line">                logger.info(<span class="string">"登录超时超过最大尝试次数"</span>)</span><br><span class="line">                exit(<span class="number">0</span>)</span><br><span class="line">            time.sleep(<span class="number">10</span>)</span><br><span class="line">            browser.get(<span class="string">"https://app.buaa.edu.cn/site/buaaStudentNcov/index"</span>)</span><br><span class="line">            logger.info(<span class="string">"登录超时，正在重试"</span>)</span><br><span class="line">            fail_cnt += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Step2 签到</span></span><br><span class="line">    browser.execute_script(<span class="string">"window.navigator.geolocation.getCurrentPosition=function(success)&#123;"</span> +</span><br><span class="line">                           <span class="string">"var position = &#123;\"coords\" : &#123;\"latitude\": \""</span> + position[<span class="number">0</span>] + <span class="string">"\",\"longitude\": \""</span></span><br><span class="line">                           + position[<span class="number">1</span>] + <span class="string">"\"&#125;&#125;;"</span> +</span><br><span class="line">                           <span class="string">"success(position);&#125;"</span>)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    location_button = browser.find_element(By.XPATH, <span class="string">"/html/body/div[1]/div[1]/div/div[5]/div/div[2]/div[2]/div[2]/input"</span>)</span><br><span class="line">    ActionChains(browser).move_to_element(location_button).click(location_button).perform()</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    location = location_button.get_attribute(<span class="string">'value'</span>)</span><br><span class="line">    logger.info(<span class="string">f"成功输入经纬度，定位<span class="subst">&#123;location&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line">    browser.implicitly_wait(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            submit_button = browser.find_element(By.XPATH, <span class="string">'/html/body/div[1]/div[1]/div/div[6]'</span>)</span><br><span class="line">            <span class="keyword">if</span> submit_button.text.find(<span class="string">"您已提交过信息"</span>) != <span class="number">-1</span>:</span><br><span class="line">                result = <span class="string">"打卡失败，您已经提交过"</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">elif</span> submit_button.text.find(<span class="string">"未到填报时间"</span>) != <span class="number">-1</span>:</span><br><span class="line">                result = <span class="string">"未到填报时间"</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            submit_button.click()</span><br><span class="line">            result = <span class="string">'提交成功'</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                reason = browser.find_element_by_css_selector(<span class="string">'#wapat &gt; div &gt; div.wapat-title'</span>).text</span><br><span class="line">                result = <span class="string">f'打卡失败，原因：<span class="subst">&#123;reason&#125;</span>'</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    browser.save_screenshot(<span class="string">'location_test.png'</span>)</span><br><span class="line">    logger.info(result)</span><br><span class="line">    datee = datetime.date.today()</span><br><span class="line">    send_message(<span class="string">"北航打卡："</span> + <span class="string">f"<span class="subst">&#123;result&#125;</span> <span class="subst">&#123;datee&#125;</span>"</span>)</span><br><span class="line">    sleep(<span class="number">50</span>)</span><br><span class="line">    browser.quit()</span><br><span class="line">    logger.info(<span class="string">"流程结束"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_message</span><span class="params">(msg)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    发送信息到手机，将结果写入临时文件，便于Windows消息提醒</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> SCKEY == <span class="string">""</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    payload = &#123;<span class="string">'text'</span>: msg&#125;</span><br><span class="line">    requests.get(<span class="string">f"https://sc.ftqq.com/<span class="subst">&#123;SCKEY&#125;</span>.send"</span>, params=payload)</span><br><span class="line"></span><br><span class="line">    f = open(<span class="string">"result.txt"</span>, <span class="string">"w"</span>)</span><br><span class="line">    f.write(msg)</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    logger = log_config()</span><br><span class="line">    sign_in()</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>关于位置经纬度获取</strong>：</p>
+<ol>
+<li>
+<p>打开网页版高德地图：<a href="https://www.amap.com/" target="_blank" rel="noopener">https://www.amap.com/</a></p>
+</li>
+<li>
+<p>选择指定位置，右键，选择<code>这是哪儿</code>；</p>
+</li>
+<li>
+<p>选择<code>更多</code>里面的<code>分享</code>；</p>
+</li>
+<li>
+<p>复制链接，在新的标签页打开，URL会自动补全，其中包含经纬度信息：<code>lng=116.343936&amp;lat=39.97812</code></p>
+<blockquote>
+<ul>
+<li>
+<p>表示东经116.343936度，北纬39.97812度；</p>
+</li>
+<li>
+<p>上面脚本中的<code>position</code>变量是由维度和经度组成的二元组</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p><strong>关于手机信息推送</strong>：</p>
+<ol>
+<li>
+<p>上面脚本中的变量<code>SCKEY</code>是填<a href="https://sct.ftqq.com/sendkey" target="_blank" rel="noopener">Server酱的Key</a>：</p>
+<img src="https://s3.bmp.ovh/imgs/2022/09/07/b9866e6c7db775c2.png" width="550" height="200" alt="图片名称" align="center" id="221">
+</li>
+<li>
+<p>为了手机通知明显，通道配置使用PushDeer，<a href="http://www.pushdeer.com/" target="_blank" rel="noopener">手机安装PushDeer</a>，配置pushkey：</p>
+<img src="https://s3.bmp.ovh/imgs/2022/09/07/90b81e137f8ae056.png" width="550" height="300" alt="图片名称" align="center" id="222">
+</li>
+</ol>
+<h2 id="32-windows消息提醒脚本"><a class="markdownIt-Anchor" href="#32-windows消息提醒脚本"></a> 3.2 Windows消息提醒脚本</h2>
+<p><strong>buaa_notice.py</strong>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> winrt.windows.ui.notifications <span class="keyword">import</span> ToastNotificationManager, ToastNotification</span><br><span class="line"><span class="keyword">import</span> winrt.windows.data.xml.dom <span class="keyword">as</span> dom</span><br><span class="line"></span><br><span class="line">notifier = ToastNotificationManager.create_toast_notifier(<span class="string">r'xxx'</span>) <span class="comment"># python.exe路径</span></span><br><span class="line"></span><br><span class="line">title = <span class="string">"北航打卡"</span></span><br><span class="line">f = open(<span class="string">"result.txt"</span>, <span class="string">"r"</span>)</span><br><span class="line">desp = f.read()</span><br><span class="line">f.close()</span><br><span class="line">tString = <span class="string">"""&lt;toast duration='short'&gt;&lt;audio src  = 'ms-winsoundevent:Notification.Reminder' loop = 'false' silent = 'false'/&gt;&lt;visual&gt;&lt;binding template='ToastText02'&gt;&lt;text id="1"&gt;"""</span> + title + <span class="string">"""&lt;/text&gt;&lt;text id="2"&gt;"""</span> + desp + <span class="string">"""&lt;/text&gt;&lt;/binding&gt;&lt;/visual&gt;&lt;/toast&gt;"""</span></span><br><span class="line"></span><br><span class="line">xDoc = dom.XmlDocument()</span><br><span class="line">xDoc.load_xml(tString)</span><br><span class="line">notifier.show(ToastNotification(xDoc))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    print(<span class="string">"打卡成功！"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="33-定时执行脚本"><a class="markdownIt-Anchor" href="#33-定时执行脚本"></a> 3.3 定时执行脚本</h2>
+<p><strong>buaa.bat</strong>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python daily_report.py</span><br><span class="line">python buaa_notice.py</span><br></pre></td></tr></table></figure>
+<p>如何配置，参考<a href="https://dragonliu2020.github.io/2022/04/10/Dukou%E7%BD%91%E7%AB%99%E8%87%AA%E5%8A%A8%E5%8C%96%E7%AD%BE%E5%88%B0/" target="_blank" rel="noopener">Dukou网站自动化签到</a></p>
+<h1 id="4-参考"><a class="markdownIt-Anchor" href="#4-参考"></a> 4 参考</h1>
+<ul>
+<li><a href="https://github.com/mottled233/buaa_daily_report" target="_blank" rel="noopener">北航每日自动打卡脚本 v1.1</a></li>
+</ul>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://dragonliu2022.github.io/2022/09/07/北航健康上报打卡/" title="北航健康上报打卡" target="_blank" rel="external">https://dragonliu2022.github.io/2022/09/07/北航健康上报打卡/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dragonliu2018" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dragonliu2018" target="_blank"><span class="text-dark">Dragon&#39;s Blogs</span><small class="ml-1x">Development</small></a></h3>
+        <div>Life is painting a picture, not doing a sum.</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/07/26/《人月神话》笔记/" title="《人月神话》笔记"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dragonliu2018" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'Pbjl2Wajl9och0xVbR5eqoH1-gzGzoHsz',
+    appKey: 'PgxFh1wV6pyMMllhxs7NJijb',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
